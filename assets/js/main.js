@@ -255,8 +255,12 @@
 
       const el = select(selector);
       if (el) {
+        const start = el.getAttribute('data-purecounter-start') || '0';
+        el.setAttribute('data-purecounter-start', start);
         el.setAttribute('data-purecounter-end', String(total));
-        el.textContent = String(total);
+        el.setAttribute('data-purecounter-duration', '1');
+        // ensure the displayed value is the start so PureCounter animates
+        el.textContent = start;
         if (typeof PureCounter === 'function') {
           try { new PureCounter(); } catch (e) { console.error(e); }
         }

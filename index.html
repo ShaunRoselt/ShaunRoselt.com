@@ -363,7 +363,7 @@
                 <span class="ico-circle"><i class="bi bi-github" style="vertical-align: middle;"></i></span>
               </div>
               <div class="counter-num">
-                  <p id="github-stars" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="0" class="counter purecounter">0</p>
+                  <p id="github-stars" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="counter purecounter">0</p>
                 <span class="counter-text">GITHUB STARS</span>
               </div>
             </div>
@@ -805,8 +805,11 @@
         CS2_Hours = hours;
         var el = document.getElementById('hours-of-cs2-playtime');
         if (el) {
+          var start = el.getAttribute('data-purecounter-start') || '0';
+          el.setAttribute('data-purecounter-start', start);
           el.setAttribute('data-purecounter-end', String(hours));
-          el.textContent = String(hours);
+          el.setAttribute('data-purecounter-duration', '1');
+          el.textContent = start;
           if (typeof PureCounter === 'function') {
             try { new PureCounter(); } catch (e) {}
           }
