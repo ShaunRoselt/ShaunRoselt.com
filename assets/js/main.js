@@ -233,6 +233,43 @@
   }
 
   /**
+   * Fetch GitHub stars for the user and update counter
+   */
+  const updateGithubStars = async (username, selector) => {
+    try {
+      let total = 0;
+      let page = 1;
+      const per_page = 100;
+      const headers = {};
+
+      while (true) {
+        const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=${per_page}&page=${page}`, { headers });
+        if (!res.ok) {
+          throw new Error('GitHub API error ' + res.status);
+        }
+        const repos = await res.json();
+        repos.forEach(r => { total += r.stargazers_count || 0; });
+        if (repos.length < per_page) break;
+        page++;
+      }
+
+      const el = select(selector);
+      if (el) {
+        el.setAttribute('data-purecounter-end', String(total));
+        el.textContent = String(total);
+        if (typeof PureCounter === 'function') {
+          try { new PureCounter(); } catch (e) { console.error(e); }
+        }
+      }
+    } catch (err) {
+      console.error('Failed to fetch GitHub stars:', err);
+    }
+  };
+
+  // Update GitHub stars counter (username inferred from site links)
+  updateGithubStars('shaunroselt', '#github-stars');
+
+  /**
    * Initiate Pure Counter 
    */
   new PureCounter();
