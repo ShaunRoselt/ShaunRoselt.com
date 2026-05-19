@@ -188,22 +188,54 @@
   });
 
   /**
-   * Testimonials slider
+   * Load testimonials/recommendations from JSON and initialize Swiper
    */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+  const loadRecommendations = async () => {
+    try {
+      const res = await fetch('assets/data/recommendations.json');
+      if (!res.ok) throw new Error('Failed to load recommendations');
+      const recs = await res.json();
+      const wrapper = select('.testimonials-slider .swiper-wrapper');
+      if (!wrapper) return;
+      wrapper.innerHTML = recs.map(r => `
+        <div class="swiper-slide">
+          <div class="testimonial-box">
+            <div class="author-test">
+              ${r.avatar ? `<img src="${r.avatar}" alt="" class="rounded-circle b-shadow-a" style="height: 200px; width: 200px;">` : ''}
+              <span class="author">${r.author}</span>
+            </div>
+            <div class="content-test">
+              <p class="description lead">${r.text}</p>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      if (window.testimonialsSwiper && typeof window.testimonialsSwiper.destroy === 'function') {
+        window.testimonialsSwiper.destroy(true, true);
+      }
+
+      window.testimonialsSwiper = new Swiper('.testimonials-slider', {
+        speed: 600,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        slidesPerView: 'auto',
+        pagination: {
+          el: '.testimonials-slider .swiper-pagination',
+          type: 'bullets',
+          clickable: true
+        }
+      });
+    } catch (err) {
+      console.error('Failed to load recommendations:', err);
     }
-  });
+  };
+
+  // load recommendations and initialize testimonials slider
+  loadRecommendations();
 
   /**
    * Portfolio details slider
@@ -216,7 +248,7 @@
       disableOnInteraction: false
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '.portfolio-details-slider .swiper-pagination',
       type: 'bullets',
       clickable: true
     }
