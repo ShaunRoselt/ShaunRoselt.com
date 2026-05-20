@@ -1,5 +1,17 @@
-(function() {
+(function () {
   "use strict";
+
+  // Remove preloader on uncaught errors to avoid a stuck loading spinner
+  window.addEventListener('error', function () {
+    try {
+      var pre = document.querySelector('#preloader'); if (pre) pre.remove();
+    } catch (e) { }
+  });
+  window.addEventListener('unhandledrejection', function () {
+    try {
+      var pre = document.querySelector('#preloader'); if (pre) pre.remove();
+    } catch (e) { }
+  });
 
   /**
    * Easy selector helper function
@@ -28,7 +40,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener);
@@ -42,62 +54,16 @@
   const age = currentYear - bornYear;
   const startedProgrammingYear = new Date(2013, 0, 1).getFullYear();
   const programmingAge = currentYear - startedProgrammingYear;
-  select("#counter-years-alive").setAttribute("data-purecounter-end", age);
-  select("#counter-years-of-experience").setAttribute("data-purecounter-end", programmingAge);
-  select("#hours-of-cs2-playtime").setAttribute("data-purecounter-end", CS2_Hours);
+  const elYearsAlive = select("#counter-years-alive");
+  if (elYearsAlive) elYearsAlive.setAttribute("data-purecounter-end", age);
 
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true);
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200;
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return undefined;
-      let section = select(navbarlink.hash);
-      if (!section) return undefined;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active');
-      } else {
-        navbarlink.classList.remove('active');
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive);
-  onscroll(document, navbarlinksActive);
+  const elYearsExp = select("#counter-years-of-experience");
+  if (elYearsExp) elYearsExp.setAttribute("data-purecounter-end", programmingAge);
 
-  /**
-   * Scrolls to an element with header offset
-   */
-  const scrollto = (el) => {
-    let header = select('#header');
-    let offset = header.offsetHeight;
-
-    if (!header.classList.contains('header-scrolled')) {
-      offset -= 16;
-    }
-
-    let elementPos = select(el).offsetTop;
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    });
-  }
-
-  /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
-  let selectHeader = select('#header');
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled');
-      } else {
-        selectHeader.classList.remove('header-scrolled');
-      }
-    }
-    window.addEventListener('load', headerScrolled);
-    onscroll(document, headerScrolled);
+  const elCS2 = select("#hours-of-cs2-playtime");
+  if (elCS2) {
+    const cs2 = (typeof CS2_Hours !== 'undefined') ? CS2_Hours : 0;
+    elCS2.setAttribute("data-purecounter-end", cs2);
   }
 
   /**
@@ -117,86 +83,352 @@
   }
 
   /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile');
-    this.classList.toggle('bi-list');
-    this.classList.toggle('bi-x');
-  })
-
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault();
-      this.nextElementSibling.classList.toggle('dropdown-active');
-    }
-  }, true);
-
-  /**
-   * Scroll with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault();
-
-      let navbar = select('#navbar');
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile');
-        let navbarToggle = select('.mobile-nav-toggle');
-        navbarToggle.classList.toggle('bi-list');
-        navbarToggle.classList.toggle('bi-x');
-      }
-      scrollto(this.hash);
-    }
-  }, true);
-
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash);
-      }
-    }
-  });
-
-  /**
    * Intro type effect
    */
   const typed = select('.typed');
-  if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
+  if (typed && typeof Typed === 'function') {
+    try {
+      let typed_strings = typed.getAttribute('data-typed-items');
+      typed_strings = typed_strings.split(',');
+      new Typed('.typed', {
+        strings: typed_strings,
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000
+      });
+    } catch (e) { }
   }
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
-  const portfolioLightbox = new GLightbox({
-    selector: '.portfolio-lightbox'
+  let portfolioLightbox = null;
+  const initPortfolioLightbox = () => {
+    if (portfolioLightbox && typeof portfolioLightbox.destroy === 'function') {
+      portfolioLightbox.destroy();
+    }
+
+    if (typeof GLightbox !== 'function') {
+      // GLightbox not available; skip initialization
+      return null;
+    }
+
+    try {
+      portfolioLightbox = new GLightbox({
+        selector: '.portfolio-lightbox'
+      });
+    } catch (e) {
+      portfolioLightbox = null;
+    }
+
+    return portfolioLightbox;
+  };
+
+  try { initPortfolioLightbox(); } catch (e) { /* ignore */ }
+
+  /**
+   * Coming soon buttons
+   */
+  let lastComingSoonTrigger = null;
+
+  const ensureComingSoonModal = () => {
+    let modalEl = select('#comingSoonModal');
+    if (modalEl) return modalEl;
+
+    modalEl = document.createElement('div');
+    modalEl.className = 'showcase-coming-soon-modal';
+    modalEl.id = 'comingSoonModal';
+    modalEl.hidden = true;
+    modalEl.setAttribute('role', 'dialog');
+    modalEl.setAttribute('aria-modal', 'true');
+    modalEl.setAttribute('aria-labelledby', 'comingSoonModalTitle');
+    modalEl.setAttribute('aria-describedby', 'comingSoonModalDescription');
+    modalEl.innerHTML = `
+      <div class="showcase-coming-soon-dialog" role="document">
+        <div class="showcase-coming-soon-header">
+          <div>
+            <span class="showcase-coming-soon-kicker"><i class="bi bi-stars" aria-hidden="true"></i> Platform update</span>
+            <h2 class="showcase-coming-soon-title" id="comingSoonModalTitle">Store support is on the way</h2>
+          </div>
+          <button type="button" class="showcase-coming-soon-close" data-coming-soon-close aria-label="Close popup">
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="showcase-coming-soon-body">
+          <p id="comingSoonModalDescription">This storefront is planned, but it is not live yet.</p>
+          <div class="showcase-coming-soon-platform">
+            <i class="bi bi-shop" aria-hidden="true"></i>
+            <span id="comingSoonPlatformName"></span>
+          </div>
+        </div>
+        <div class="showcase-coming-soon-actions">
+          <button type="button" class="button button-a" data-coming-soon-close>Close</button>
+        </div>
+      </div>
+    `;
+
+    modalEl.addEventListener('click', (event) => {
+      if (event.target === modalEl || event.target.closest('[data-coming-soon-close]')) {
+        hideComingSoonModal();
+      }
+    });
+
+    document.body.appendChild(modalEl);
+    return modalEl;
+  };
+
+  const hideComingSoonModal = () => {
+    const modalEl = select('#comingSoonModal');
+    if (!modalEl || modalEl.hidden) return;
+
+    modalEl.hidden = true;
+    document.body.classList.remove('showcase-modal-open');
+
+    if (lastComingSoonTrigger && typeof lastComingSoonTrigger.focus === 'function') {
+      lastComingSoonTrigger.focus();
+    }
+  };
+
+  const showComingSoonModal = (platform, trigger) => {
+    const modalEl = ensureComingSoonModal();
+    const platformEl = modalEl.querySelector('#comingSoonPlatformName');
+    const descriptionEl = modalEl.querySelector('#comingSoonModalDescription');
+    if (platformEl) {
+      platformEl.textContent = platform;
+    }
+    if (descriptionEl) {
+      descriptionEl.textContent = `${platform} support is coming soon. For now, the app is available on the platforms that are already linked here.`;
+    }
+
+    lastComingSoonTrigger = trigger || document.activeElement;
+    modalEl.hidden = false;
+    document.body.classList.add('showcase-modal-open');
+
+    const closeButton = modalEl.querySelector('[data-coming-soon-close]');
+    if (closeButton) {
+      closeButton.focus();
+    }
+  };
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      hideComingSoonModal();
+    }
   });
+
+  on('click', '.button-coming-soon', function (event) {
+    event.preventDefault();
+    showComingSoonModal(this.getAttribute('data-coming-soon-platform') || 'This platform', this);
+  }, true);
+
+  /**
+   * Compact showcase cards to preserve media height
+   */
+  const syncShowcaseCardLayout = () => {
+    const showcaseCards = select('.showcase-card', true);
+    if (!showcaseCards.length) return;
+
+    showcaseCards.forEach(card => {
+      const media = card.querySelector('.showcase-media');
+      const body = card.querySelector('.showcase-body');
+      const tags = card.querySelector('.showcase-tags');
+      const features = card.querySelector('.showcase-features');
+      const featureItems = features ? [...features.querySelectorAll('li')] : [];
+
+      if (!media || !body) return;
+
+      body.classList.remove('showcase-body-compact', 'showcase-body-clamp-summary');
+      if (tags) tags.hidden = false;
+      if (features) features.hidden = false;
+      featureItems.forEach(item => {
+        item.hidden = false;
+      });
+
+      if (window.innerWidth <= 991) {
+        return;
+      }
+
+      const fitsWithinMedia = () => body.scrollHeight <= media.clientHeight;
+
+      if (fitsWithinMedia()) {
+        return;
+      }
+
+      body.classList.add('showcase-body-compact');
+
+      for (let index = featureItems.length - 1; index >= 0 && !fitsWithinMedia(); index -= 1) {
+        featureItems[index].hidden = true;
+      }
+
+      if (features && featureItems.every(item => item.hidden)) {
+        features.hidden = true;
+      }
+
+      if (tags && !fitsWithinMedia()) {
+        tags.hidden = true;
+      }
+
+      if (!fitsWithinMedia()) {
+        body.classList.add('showcase-body-clamp-summary');
+      }
+    });
+  };
+
+  let showcaseLayoutRaf = null;
+  const queueShowcaseCardLayoutSync = () => {
+    if (showcaseLayoutRaf) {
+      window.cancelAnimationFrame(showcaseLayoutRaf);
+    }
+    showcaseLayoutRaf = window.requestAnimationFrame(() => {
+      syncShowcaseCardLayout();
+      showcaseLayoutRaf = null;
+    });
+  };
+
+  window.addEventListener('load', queueShowcaseCardLayoutSync);
+  window.addEventListener('resize', queueShowcaseCardLayoutSync);
+  if (document.fonts && typeof document.fonts.ready?.then === 'function') {
+    document.fonts.ready.then(queueShowcaseCardLayoutSync).catch(() => { });
+  }
+
+  /**
+   * Non-interactive iframe previews: when an iframe loads, fade out the
+   * fallback image so pages that allow embedding show the live preview.
+   * Additionally, present embedded sites as a scaled "desktop" viewport
+   * so they look like desktop screenshots rather than zoomed mobile views.
+   */
+  const DESKTOP_IFRAME_WIDTH = 1200;
+  const WEBSITE_IFRAME_ZOOM = 0.9;
+  let iframeScaleInitialized = false;
+  let iframeScaleRaf = null;
+
+  const getShowcaseIframeViewportWidth = (iframe) => {
+    const category = iframe.closest('[data-portfolio-category]')?.dataset.portfolioCategory;
+    const zoom = category === 'websites' ? WEBSITE_IFRAME_ZOOM : 1;
+    return Math.round(DESKTOP_IFRAME_WIDTH / zoom);
+  };
+
+  const updateShowcaseIframeScales = () => {
+    const medias = select('.showcase-media', true) || [];
+    medias.forEach(media => {
+      const iframe = media.querySelector('iframe');
+      if (!iframe) return;
+      const iframeViewportWidth = getShowcaseIframeViewportWidth(iframe);
+      const iframeViewportHeight = Math.round(iframeViewportWidth * 9 / 16);
+      const parentWidth = media.clientWidth || media.offsetWidth || 0;
+      const parentHeight = media.clientHeight || media.offsetHeight || 0;
+      let scale = Math.min(parentWidth / iframeViewportWidth, parentHeight / iframeViewportHeight);
+      if (!isFinite(scale) || scale <= 0) scale = 1;
+      if (scale > 1) scale = 1;
+      iframe.style.setProperty('--iframe-scale', String(scale));
+      iframe.style.setProperty('--iframe-viewport-width', iframeViewportWidth + 'px');
+    });
+  };
+
+  const queueUpdateShowcaseIframeScales = () => {
+    if (iframeScaleRaf) window.cancelAnimationFrame(iframeScaleRaf);
+    iframeScaleRaf = window.requestAnimationFrame(() => {
+      updateShowcaseIframeScales();
+      iframeScaleRaf = null;
+    });
+  };
+
+  const initShowcaseIframes = () => {
+    const iframes = select('.showcase-media iframe', true) || [];
+    if (!iframes.length) return;
+
+    iframes.forEach(iframe => {
+      const fallback = iframe.parentElement ? iframe.parentElement.querySelector('.showcase-fallback') : null;
+      const resetIframeScroll = () => {
+        try {
+          const frameWindow = iframe.contentWindow;
+          const frameDoc = iframe.contentDocument || frameWindow?.document;
+          if (!frameWindow || !frameDoc) return;
+
+          if ('scrollRestoration' in frameWindow.history) {
+            frameWindow.history.scrollRestoration = 'manual';
+          }
+
+          frameWindow.scrollTo(0, 0);
+          frameDoc.documentElement.scrollTop = 0;
+          if (frameDoc.body) frameDoc.body.scrollTop = 0;
+        } catch (e) {
+          // cross-origin or sandboxed without same-origin access
+        }
+      };
+
+      const hideFallback = () => {
+        if (fallback) {
+          try {
+            fallback.style.transition = 'opacity 320ms ease';
+            fallback.style.opacity = '0';
+            setTimeout(() => {
+              if (fallback && fallback.parentElement) fallback.style.display = 'none';
+            }, 420);
+          } catch (e) {
+            // defensive: don't let this break other scripts
+          }
+        }
+      };
+
+      const handleLoad = () => {
+        resetIframeScroll();
+        window.requestAnimationFrame(resetIframeScroll);
+        window.setTimeout(resetIframeScroll, 160);
+        hideFallback();
+      };
+
+      if (iframe.dataset.showcaseIframeInitialized !== 'true') {
+        iframe.addEventListener('load', handleLoad);
+        iframe.dataset.showcaseIframeInitialized = 'true';
+      }
+
+      // If same-origin and already complete, hide immediately
+      try {
+        if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+          handleLoad();
+        }
+      } catch (e) {
+        // cross-origin access will throw — ignore and continue to attach listener
+      }
+    });
+
+    // update scales initially and attach listeners once
+    updateShowcaseIframeScales();
+    if (!iframeScaleInitialized) {
+      window.addEventListener('resize', queueUpdateShowcaseIframeScales);
+      window.addEventListener('load', queueUpdateShowcaseIframeScales);
+      iframeScaleInitialized = true;
+    }
+  };
+
+  const refreshShowcaseUi = () => {
+    initPortfolioLightbox();
+    queueShowcaseCardLayoutSync();
+    initShowcaseIframes();
+  };
+
+  window.SiteShowcase = {
+    refresh: refreshShowcaseUi
+  };
+
+  // Attach handlers immediately and again when portfolio content changes
+  refreshShowcaseUi();
+  window.addEventListener('load', refreshShowcaseUi);
+  window.addEventListener('portfolio:rendered', refreshShowcaseUi);
 
   /**
    * Load testimonials/recommendations from JSON and initialize Swiper
    */
   const loadRecommendations = async () => {
     try {
-      const res = await fetch('assets/data/recommendations.json');
-      if (!res.ok) throw new Error('Failed to load recommendations');
-      const recs = await res.json();
       const wrapper = select('.testimonials-slider .swiper-wrapper');
       if (!wrapper) return;
+
+      const res = await fetch('assets/data/recommendations.json');
+      if (!res.ok) return;
+      const recs = await res.json();
       wrapper.innerHTML = recs.map(r => `
         <div class="swiper-slide">
           <div class="testimonial-box">
@@ -230,7 +462,7 @@
         }
       });
     } catch (err) {
-      console.error('Failed to load recommendations:', err);
+      // Recommendations are optional; fail silently if the request is unavailable.
     }
   };
 
@@ -240,19 +472,23 @@
   /**
    * Portfolio details slider
    */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.portfolio-details-slider .swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+  if (select('.portfolio-details-slider') && typeof Swiper === 'function') {
+    try {
+      new Swiper('.portfolio-details-slider', {
+        speed: 400,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: '.portfolio-details-slider .swiper-pagination',
+          type: 'bullets',
+          clickable: true
+        }
+      });
+    } catch (e) { }
+  }
 
   /**
    * Preloader
@@ -260,7 +496,7 @@
   let preloader = select('#preloader');
   if (preloader) {
     //window.addEventListener('load', () => {
-      preloader.remove();
+    preloader.remove();
     //});
   }
 
@@ -269,6 +505,9 @@
    */
   const updateGithubStars = async (username, selector) => {
     try {
+      const el = select(selector);
+      if (!el) return;
+
       let total = 0;
       let page = 1;
       const per_page = 100;
@@ -285,20 +524,17 @@
         page++;
       }
 
-      const el = select(selector);
-      if (el) {
-        const start = el.getAttribute('data-purecounter-start') || '0';
-        el.setAttribute('data-purecounter-start', start);
-        el.setAttribute('data-purecounter-end', String(total));
-        el.setAttribute('data-purecounter-duration', '1');
-        // ensure the displayed value is the start so PureCounter animates
-        el.textContent = start;
-        if (typeof PureCounter === 'function') {
-          try { new PureCounter(); } catch (e) { console.error(e); }
-        }
+      const start = el.getAttribute('data-purecounter-start') || '0';
+      el.setAttribute('data-purecounter-start', start);
+      el.setAttribute('data-purecounter-end', String(total));
+      el.setAttribute('data-purecounter-duration', '1');
+      // ensure the displayed value is the start so PureCounter animates
+      el.textContent = start;
+      if (typeof PureCounter === 'function') {
+        try { new PureCounter(); } catch (e) { }
       }
     } catch (err) {
-      console.error('Failed to fetch GitHub stars:', err);
+      // GitHub stars are a nice-to-have; keep the console clean if the API fails.
     }
   };
 
@@ -306,8 +542,10 @@
   updateGithubStars('shaunroselt', '#github-stars');
 
   /**
-   * Initiate Pure Counter 
+   * Initiate Pure Counter
    */
-  new PureCounter();
+  if (typeof PureCounter === 'function') {
+    new PureCounter();
+  }
 
 })()

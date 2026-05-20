@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -17,6 +18,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.1.4/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/components/site-header/site-header.css">
 
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -24,48 +26,9 @@
 </head>
 
 <body>
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <h1 class="logo"><a href="index.html">Shaun Roselt</a></h1>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#work-experience">Work Experience</a></li>
-          <li class="dropdown"><a href="#work"><span>Portfolio</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li class="dropdown"><a href="#work"><span>Apps</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#work">Roselt Developer Tools</a></li>
-                  <li><a href="#work">Programming Helper</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#work"><span>Websites</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#work">CSS Hexagon Generator</a></li>
-                  <li><a href="#work">Programming Helper</a></li>
-                  <li><a href="#work">Griekwastad</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#work"><span>Games</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Coming Soon!</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-      <!-- .navbar -->
-
-    </div>
-  </header>
-  <!-- End Header -->
+  <div data-site-header></div>
+  <script src="assets/js/portfolio-data.js"></script>
+  <script src="assets/components/site-header/site-header.js"></script>
 
   <!-- ======= Hero Section ======= -->
   <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/hero-bg.jpg)">
@@ -73,9 +36,9 @@
     <div class="hero-content display-table">
       <div class="table-cell">
         <div class="container">
-          <p class="display-6 color-d">Hello, world!</p>
           <h1 class="hero-title mb-4">I am Shaun Roselt</h1>
-          <p class="hero-subtitle"><span class="typed" data-typed-items="Web Developer, Software Developer, Gamer, Whatever you want me to be 😏"></span></p>
+          <p class="hero-subtitle"><span class="typed"
+              data-typed-items="Web Developer, Software Developer, Gamer, Whatever you want me to be 😏"></span></p>
         </div>
       </div>
     </div>
@@ -102,8 +65,11 @@
                       <div class="about-info">
                         <p><span class="title-s">Name: </span> <span>Shaun Roselt</span></p>
                         <p><span class="title-s">Profile: </span> <span>Web Developer & Software Developer</span></p>
-                        <p><span class="title-s">Email: </span> <a href="mailto:Me@ShaunRoselt.com">Me@ShaunRoselt.com</a></p>
-                        <p><span class="title-s">Phone: </span> <a href="https://web.whatsapp.com/send?phone=+27659016396" target="_blank" rel="noreferrer noopener">+27659016396</a></p>
+                        <p><span class="title-s">Email: </span> <a
+                            href="mailto:Me@ShaunRoselt.com">Me@ShaunRoselt.com</a></p>
+                        <p><span class="title-s">Phone: </span> <a
+                            href="https://web.whatsapp.com/send?phone=+27659016396" target="_blank"
+                            rel="noreferrer noopener">+27659016396</a></p>
                       </div>
                     </div>
                   </div>
@@ -140,16 +106,23 @@
                       </h5>
                     </div>
                     <p class="lead">
-                      I am an enthusiastic developer based in South Africa, with a rich experience of over 10 years in software and web development.
+                      I am an enthusiastic developer based in South Africa, with a rich experience of over 10 years in
+                      software and web development.
                     </p>
                     <p class="lead">
-                      I design professional high quality websites and applications. I am passionate about building great, cutting-edge software that people love to use, I have developed an obsessive eye for detail and a strong focus on quality.
+                      I design professional high quality websites and applications. I am passionate about building
+                      great, cutting-edge software that people love to use, I have developed an obsessive eye for detail
+                      and a strong focus on quality.
                     </p>
                     <p class="lead">
-                      With years of experience in software and web development, I have mastered the skills of understanding client requirements according to the latest trends. I have worked with businesses from different niches so you can rely on me for yours.
+                      With years of experience in software and web development, I have mastered the skills of
+                      understanding client requirements according to the latest trends. I have worked with businesses
+                      from different niches so you can rely on me for yours.
                     </p>
                     <p class="lead">
-                      I’ve spent most of these years working across various areas of design/development such as websites, apps, databases, all the way to my current role designing cross-platform products for mobile, desktop and web platforms.
+                      I’ve spent most of these years working across various areas of design/development such as
+                      websites, apps, databases, all the way to my current role designing cross-platform products for
+                      mobile, desktop and web platforms.
                     </p>
                   </div>
                 </div>
@@ -180,14 +153,17 @@
           <div class="accordion" id="accordionWorkExperienceExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="WorkExperience-heading1">
-                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#WorkExperience-collapse1" aria-expanded="false" aria-controls="WorkExperience-collapse1">
+                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#WorkExperience-collapse1" aria-expanded="false"
+                  aria-controls="WorkExperience-collapse1">
                   <div class="col-lg-3">March 2019 - Present</div>
                   <div class="col-lg-4">Senior Software Engineer</div>
                   <div class="col-lg-2">Full-Time</div>
                   <div class="col-lg-3">Nerospec</div>
                 </button>
               </h2>
-              <div id="WorkExperience-collapse1" class="accordion-collapse collapse" aria-labelledby="WorkExperience-heading1">
+              <div id="WorkExperience-collapse1" class="accordion-collapse collapse"
+                aria-labelledby="WorkExperience-heading1">
                 <div class="accordion-body">
                   <ul>
                     <li><strong>Delphi (VCL & FMX)</strong></li>
@@ -195,37 +171,49 @@
                     <li><strong>SQL (Firebird, PostgreSQL & SQLite)</strong></li>
                     <li><strong>HTML, CSS, JavaScript, PHP</strong></li>
                   </ul>
-                  <p><strong>Occasionally working with other languages and frameworks such as C++, C#, React, etc.</strong></p>
+                  <p><strong>Occasionally working with other languages and frameworks such as C++, C#, React,
+                      etc.</strong></p>
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
               <h2 class="accordion-header" id="WorkExperience-heading2">
-                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#WorkExperience-collapse2" aria-expanded="false" aria-controls="WorkExperience-collapse2">
+                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#WorkExperience-collapse2" aria-expanded="false"
+                  aria-controls="WorkExperience-collapse2">
                   <div class="col-lg-3">March 2017 - Present</div>
                   <div class="col-lg-4">Embarcadero MVP (Delphi & RAD Studio)</div>
                   <div class="col-lg-2">Contract</div>
                   <div class="col-lg-3">Embarcadero Technologies</div>
                 </button>
               </h2>
-              <div id="WorkExperience-collapse2" class="accordion-collapse collapse" aria-labelledby="WorkExperience-heading2">
+              <div id="WorkExperience-collapse2" class="accordion-collapse collapse"
+                aria-labelledby="WorkExperience-heading2">
                 <div class="accordion-body">
-                  <p><strong>Embarcadero’s MVP (Most Valuable Professional) program chooses the “best of the best” Embarcadero community members to be trusted assets for our customers and prospects. An MVP is passionate about Embarcadero products and the success of everyone who uses them. An MVP evangelizes (cheers for, promotes, teaches about, etc.) Embarcadero products by writing and speaking on the elegance, simplicity and productivity of the products at user groups, conferences, and webinars, and in websites, articles, newsgroups, blogs and social networks.</strong></p>
+                  <p><strong>Embarcadero’s MVP (Most Valuable Professional) program chooses the “best of the best”
+                      Embarcadero community members to be trusted assets for our customers and prospects. An MVP is
+                      passionate about Embarcadero products and the success of everyone who uses them. An MVP
+                      evangelizes (cheers for, promotes, teaches about, etc.) Embarcadero products by writing and
+                      speaking on the elegance, simplicity and productivity of the products at user groups, conferences,
+                      and webinars, and in websites, articles, newsgroups, blogs and social networks.</strong></p>
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
               <h2 class="accordion-header" id="WorkExperience-heading3">
-                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#WorkExperience-collapse3" aria-expanded="false" aria-controls="WorkExperience-collapse3">
+                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#WorkExperience-collapse3" aria-expanded="false"
+                  aria-controls="WorkExperience-collapse3">
                   <div class="col-lg-3">April 2018 – December 2018</div>
                   <div class="col-lg-4">PHP Web Developer</div>
                   <div class="col-lg-2">Full-Time</div>
                   <div class="col-lg-3">CyberDevs</div>
                 </button>
               </h2>
-              <div id="WorkExperience-collapse3" class="accordion-collapse collapse" aria-labelledby="WorkExperience-heading3">
+              <div id="WorkExperience-collapse3" class="accordion-collapse collapse"
+                aria-labelledby="WorkExperience-heading3">
                 <div class="accordion-body">
                   <ul>
                     <li><strong>HTML5</strong></li>
@@ -244,14 +232,17 @@
 
             <div class="accordion-item">
               <h2 class="accordion-header" id="WorkExperience-heading4">
-                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#WorkExperience-collapse4" aria-expanded="false" aria-controls="WorkExperience-collapse4">
+                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#WorkExperience-collapse4" aria-expanded="false"
+                  aria-controls="WorkExperience-collapse4">
                   <div class="col-lg-3">December 2016 – July 2017</div>
                   <div class="col-lg-4">Web Developer</div>
                   <div class="col-lg-2">Full-Time</div>
                   <div class="col-lg-3">SCS Solutions</div>
                 </button>
               </h2>
-              <div id="WorkExperience-collapse4" class="accordion-collapse collapse" aria-labelledby="WorkExperience-heading4">
+              <div id="WorkExperience-collapse4" class="accordion-collapse collapse"
+                aria-labelledby="WorkExperience-heading4">
                 <div class="accordion-body">
                   <ul>
                     <li><strong>HTML5</strong></li>
@@ -270,14 +261,17 @@
 
             <div class="accordion-item">
               <h2 class="accordion-header" id="WorkExperience-heading5">
-                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#WorkExperience-collapse5" aria-expanded="false" aria-controls="WorkExperience-collapse5">
+                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#WorkExperience-collapse5" aria-expanded="false"
+                  aria-controls="WorkExperience-collapse5">
                   <div class="col-lg-3">January 2014 – November 2016</div>
                   <div class="col-lg-4">Software/Web Developer</div>
                   <div class="col-lg-2">Part-Time</div>
                   <div class="col-lg-3">Bazooka Studios</div>
                 </button>
               </h2>
-              <div id="WorkExperience-collapse5" class="accordion-collapse collapse" aria-labelledby="WorkExperience-heading5">
+              <div id="WorkExperience-collapse5" class="accordion-collapse collapse"
+                aria-labelledby="WorkExperience-heading5">
                 <div class="accordion-body">
                   <ul>
                     <li><strong>Delphi</strong></li>
@@ -293,14 +287,17 @@
 
             <div class="accordion-item">
               <h2 class="accordion-header" id="WorkExperience-heading6">
-                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#WorkExperience-collapse6" aria-expanded="false" aria-controls="#WorkExperience-collapse6">
+                <button class="accordion-button collapsed pe-5" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#WorkExperience-collapse6" aria-expanded="false"
+                  aria-controls="#WorkExperience-collapse6">
                   <div class="col-lg-3">June 2015 – July 2015</div>
                   <div class="col-lg-4">Junior Web Developer</div>
                   <div class="col-lg-2">Apprenticeship</div>
                   <div class="col-lg-3">Bitcube</div>
                 </button>
               </h2>
-              <div id="WorkExperience-collapse6" class="accordion-collapse collapse" aria-labelledby="WorkExperience-heading6">
+              <div id="WorkExperience-collapse6" class="accordion-collapse collapse"
+                aria-labelledby="WorkExperience-heading6">
                 <div class="accordion-body">
                   <ul>
                     <li><strong>HTML5</strong></li>
@@ -313,7 +310,7 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -330,7 +327,8 @@
                 <span class="ico-circle"><i class="bi bi-person" style="vertical-align: middle;"></i></span>
               </div>
               <div class="counter-num">
-                <p id="counter-years-alive" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="counter purecounter"></p>
+                <p id="counter-years-alive" data-purecounter-start="0" data-purecounter-end="0"
+                  data-purecounter-duration="1" class="counter purecounter"></p>
                 <span class="counter-text">YEARS ALIVE</span>
               </div>
             </div>
@@ -341,7 +339,8 @@
                 <span class="ico-circle"><i class="bi bi-code" style="vertical-align: middle;"></i></span>
               </div>
               <div class="counter-num">
-                <p id="counter-years-of-experience" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="counter purecounter"></p>
+                <p id="counter-years-of-experience" data-purecounter-start="0" data-purecounter-end="0"
+                  data-purecounter-duration="1" class="counter purecounter"></p>
                 <span class="counter-text">YEARS OF EXPERIENCE</span>
               </div>
             </div>
@@ -352,7 +351,8 @@
                 <span class="ico-circle"><i class="bi bi-controller" style="vertical-align: middle;"></i></span>
               </div>
               <div class="counter-num">
-                <p id="hours-of-cs2-playtime" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="counter purecounter"></p>
+                <p id="hours-of-cs2-playtime" data-purecounter-start="0" data-purecounter-end="0"
+                  data-purecounter-duration="1" class="counter purecounter"></p>
                 <span class="counter-text">HOURS OF CS2 PLAYTIME</span>
               </div>
             </div>
@@ -363,7 +363,8 @@
                 <span class="ico-circle"><i class="bi bi-github" style="vertical-align: middle;"></i></span>
               </div>
               <div class="counter-num">
-                  <p id="github-stars" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="counter purecounter">0</p>
+                <p id="github-stars" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1"
+                  class="counter purecounter">0</p>
                 <span class="counter-text">GITHUB STARS</span>
               </div>
             </div>
@@ -392,7 +393,8 @@
         <div class="row">
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/roselt-developer-tools-portfolio.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="assets/img/roselt-developer-tools-portfolio.png" data-gallery="portfolioGallery"
+                class="portfolio-lightbox">
                 <div class="work-img">
                   <img src="assets/img/roselt-developer-tools-portfolio.png" alt="" class="img-fluid">
                 </div>
@@ -416,7 +418,8 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/programming-helper-portfolio.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="assets/img/programming-helper-portfolio.png" data-gallery="portfolioGallery"
+                class="portfolio-lightbox">
                 <div class="work-img">
                   <img src="assets/img/programming-helper-portfolio.png" alt="" class="img-fluid">
                 </div>
@@ -440,7 +443,8 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/css-hexagon-generator-portfolio.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="assets/img/css-hexagon-generator-portfolio.png" data-gallery="portfolioGallery"
+                class="portfolio-lightbox">
                 <div class="work-img">
                   <img src="assets/img/css-hexagon-generator-portfolio.png" alt="" class="img-fluid">
                 </div>
@@ -571,7 +575,8 @@
                 Programming is a skill best acquired by practice and example rather than from books.
               </p>
               <div class="line-mf mb-4"></div>
-              <a href="Shaun-Roselt-Curriculum-Vitae-(CV).pdf" target="_blank" class="btn button button-a ps-5 pe-5 pt-4 pb-4 fs-5">Curriculum Vitae (CV)</a>
+              <a href="Shaun-Roselt-Curriculum-Vitae-(CV).pdf" target="_blank"
+                class="btn button button-a ps-5 pe-5 pt-4 pb-4 fs-5">Curriculum Vitae (CV)</a>
             </div>
           </div>
         </div>
@@ -579,7 +584,8 @@
     </section>
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/counters-bg.jpg)">
+    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route"
+      style="background-image: url(assets/img/counters-bg.jpg)">
       <div class="overlay-mf"></div>
       <div class="container">
         <div class="row">
@@ -598,22 +604,26 @@
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                required>
                             </div>
                           </div>
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                                required>
                             </div>
                           </div>
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                required>
                             </div>
                           </div>
                           <div class="col-md-12">
                             <div class="form-group">
-                              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                              <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                required></textarea>
                             </div>
                           </div>
                           <div class="col-md-12 text-center my-3">
@@ -622,7 +632,9 @@
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                           </div>
                           <div class="col-md-12 text-center">
-                            <button type="button" class="button button-a button-big button-rouded" onClick="alert('I have not had time to finish this yet. Sorry 😂. Email me on Me@ShaunRoselt.com');">Send Message</button>
+                            <button type="button" class="button button-a button-big button-rouded"
+                              onClick="alert('I have not had time to finish this yet. Sorry 😂. Email me on Me@ShaunRoselt.com');">Send
+                              Message</button>
                           </div>
                         </div>
                       </form>
@@ -640,19 +652,31 @@
                       </p>
                       <ul class="list-ico">
                         <li><span class="bi bi-geo-alt"></span> South Africa</li>
-                        <li><span class="bi bi-phone"></span> <a href="https://web.whatsapp.com/send?phone=+27659016396" target="_blank" rel="noreferrer noopener">+27659016396</a></li>
-                        <li><span class="bi bi-envelope"></span> <a href="mailto:Me@ShaunRoselt.com">Me@ShaunRoselt.com</a></li>
+                        <li><span class="bi bi-phone"></span> <a href="https://web.whatsapp.com/send?phone=+27659016396"
+                            target="_blank" rel="noreferrer noopener">+27659016396</a></li>
+                        <li><span class="bi bi-envelope"></span> <a
+                            href="mailto:Me@ShaunRoselt.com">Me@ShaunRoselt.com</a></li>
                       </ul>
                     </div>
                     <div class="socials">
                       <ul>
-                        <li><a href="https://www.facebook.com/shaunroselt0" target="_blank"><span class="ico-circle"><i class="bi bi-facebook" style="vertical-align: middle;"></i></span></a></li>
-                        <li><a href="https://twitter.com/shaunroselt" target="_blank"><span class="ico-circle"><i class="bi bi-twitter" style="vertical-align: middle;"></i></span></a></li>
-                        <li><a href="https://www.instagram.com/shaun.roselt/" target="_blank"><span class="ico-circle"><i class="bi bi-instagram" style="vertical-align: middle;"></i></span></a></li>
-                        <li><a href="https://linkedin.com/in/shaunroselt" target="_blank"><span class="ico-circle"><i class="bi bi-linkedin" style="vertical-align: middle;"></i></span></a></li>
-                        <li><a href="https://www.youtube.com/ShaunRoselt?sub_confirmation=1" target="_blank"><span class="ico-circle"><i class="bi bi-youtube" style="vertical-align: middle;"></i></span></a></li>
-                        <li><a href="https://github.com/shaunroselt/" target="_blank"><span class="ico-circle"><i class="bi bi-github" style="vertical-align: middle;"></i></span></a></li>
-                        <li><a href="https://steamcommunity.com/id/ShaunRoselt" target="_blank"><span class="ico-circle"><i class="bi bi-steam" style="vertical-align: middle;"></i></span></a></li>
+                        <li><a href="https://www.facebook.com/shaunroselt0" target="_blank"><span class="ico-circle"><i
+                                class="bi bi-facebook" style="vertical-align: middle;"></i></span></a></li>
+                        <li><a href="https://twitter.com/shaunroselt" target="_blank"><span class="ico-circle"><i
+                                class="bi bi-twitter" style="vertical-align: middle;"></i></span></a></li>
+                        <li><a href="https://www.instagram.com/shaun.roselt/" target="_blank"><span
+                              class="ico-circle"><i class="bi bi-instagram"
+                                style="vertical-align: middle;"></i></span></a></li>
+                        <li><a href="https://linkedin.com/in/shaunroselt" target="_blank"><span class="ico-circle"><i
+                                class="bi bi-linkedin" style="vertical-align: middle;"></i></span></a></li>
+                        <li><a href="https://www.youtube.com/ShaunRoselt?sub_confirmation=1" target="_blank"><span
+                              class="ico-circle"><i class="bi bi-youtube"
+                                style="vertical-align: middle;"></i></span></a></li>
+                        <li><a href="https://github.com/shaunroselt/" target="_blank"><span class="ico-circle"><i
+                                class="bi bi-github" style="vertical-align: middle;"></i></span></a></li>
+                        <li><a href="https://steamcommunity.com/id/ShaunRoselt" target="_blank"><span
+                              class="ico-circle"><i class="bi bi-steam" style="vertical-align: middle;"></i></span></a>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -682,7 +706,8 @@
   </footer><!-- End  Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
@@ -699,43 +724,43 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-  (function () {
-    fetch('https://api.shaunroselt.com/steam_playtime.php')
-      .then(function (res) { if (!res.ok) throw new Error('Network response was not ok'); return res.json(); })
-      .then(function (data) {
-        var hours = (data && data.cs2_hours) ? data.cs2_hours : 0;
-        CS2_Hours = hours;
-        var el = document.getElementById('hours-of-cs2-playtime');
-        if (el) {
-          var start = el.getAttribute('data-purecounter-start') || '0';
-          el.setAttribute('data-purecounter-start', start);
-          el.setAttribute('data-purecounter-end', String(hours));
-          el.setAttribute('data-purecounter-duration', '1');
-          el.textContent = start;
-          if (typeof PureCounter === 'function') {
-            try { new PureCounter(); } catch (e) {}
+    (function () {
+      fetch('https://api.shaunroselt.com/steam_playtime.php')
+        .then(function (res) { if (!res.ok) throw new Error('Network response was not ok'); return res.json(); })
+        .then(function (data) {
+          var hours = (data && data.cs2_hours) ? data.cs2_hours : 0;
+          CS2_Hours = hours;
+          var el = document.getElementById('hours-of-cs2-playtime');
+          if (el) {
+            var start = el.getAttribute('data-purecounter-start') || '0';
+            el.setAttribute('data-purecounter-start', start);
+            el.setAttribute('data-purecounter-end', String(hours));
+            el.setAttribute('data-purecounter-duration', '1');
+            el.textContent = start;
+            if (typeof PureCounter === 'function') {
+              try { new PureCounter(); } catch (e) { }
+            }
           }
-        }
-      })
-      .catch(function (err) { console.error('Failed to load CS2 playtime:', err); });
-  })();
+        })
+        .catch(function (err) { });
+    })();
   </script>
-  
-  
- <!-- Default Statcounter code for Shaun Roselt (Personal Website)
+
+
+  <!-- Default Statcounter code for Shaun Roselt (Personal Website)
 https://shaunroselt.com -->
-<script type="text/javascript">
-var sc_project=13066077; 
-var sc_invisible=1; 
-var sc_security="d3f42120"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js" async></script>
-<noscript><div class="statcounter"><a title="free web stats"
-href="https://statcounter.com/" target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/13066077/0/d3f42120/1/" alt="free web stats"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
+  <script type="text/javascript">
+    var sc_project = 13066077;
+    var sc_invisible = 1;
+    var sc_security = "d3f42120"; 
+  </script>
+  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter"><a title="free web stats" href="https://statcounter.com/" target="_blank"><img
+          class="statcounter" src="https://c.statcounter.com/13066077/0/d3f42120/1/" alt="free web stats"
+          referrerPolicy="no-referrer-when-downgrade"></a></div>
+  </noscript>
+  <!-- End of Statcounter Code -->
 
 </body>
 

@@ -1,0 +1,432 @@
+[
+  {
+    "id": "css-hexagon-generator",
+    "name": "CSS Hexagon Generator",
+    "summary": "A small tool for generating pure-CSS hexagon shapes.",
+    "tags": [
+      {
+        "icon": "bi-code-slash",
+        "label": "CSS Tool"
+      },
+      {
+        "icon": "bi-brush",
+        "label": "Shapes"
+      }
+    ],
+    "features": [
+      "Generate responsive hexagons with configurable sizes and colours.",
+      "Pure-CSS output suitable for modern browsers and simple integrations."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://csshexagon.shaunroselt.com/",
+      "title": "CSS Hexagon Generator preview",
+      "sandbox": "allow-scripts",
+      "fallback": {
+        "kind": "image",
+        "src": "assets/img/css-hexagon-generator-portfolio.png",
+        "alt": "CSS Hexagon Generator screenshot"
+      }
+    },
+    "links": [
+      {
+        "href": "assets/img/css-hexagon-generator-portfolio.png",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "lightbox": true,
+        "gallery": "websitesShowcaseGallery"
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "programming-helper",
+    "name": "Programming Helper",
+    "summary": "Tutorials, references and small web tools for developers.",
+    "tags": [
+      {
+        "icon": "bi-journal-code",
+        "label": "Reference Tool"
+      },
+      {
+        "icon": "bi-globe2",
+        "label": "Web App"
+      }
+    ],
+    "features": [
+      "Short-path access to coding information and quick examples.",
+      "Designed for speed and clarity during active development sessions."
+    ],
+    "media": {
+      "kind": "image",
+      "src": "assets/img/programming-helper-portfolio.png",
+      "alt": "Programming Helper screenshot"
+    },
+    "links": [
+      {
+        "href": "assets/img/programming-helper-portfolio.png",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "lightbox": true,
+        "gallery": "websitesShowcaseGallery"
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "roselt-calculator-web",
+    "name": "Roselt Calculator",
+    "summary": "The browser version of Roselt Calculator — standard, scientific, programmer and graphing workflows in one place.",
+    "tags": [
+      {
+        "icon": "bi-calculator",
+        "label": "Calculator"
+      },
+      {
+        "icon": "bi-graph-up",
+        "label": "Math Tools"
+      }
+    ],
+    "features": [
+      "Multiple calculator modes with fast access to advanced tools.",
+      "Clean UI with sensible defaults for quick calculations."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://calculator.apps.shaunroselt.com/",
+      "title": "Roselt Calculator preview",
+      "sandbox": "allow-scripts",
+      "fallback": {
+        "kind": "image",
+        "src": "assets/img/roselt-calculator-web-portfolio.png",
+        "alt": "Roselt Calculator web screenshot"
+      }
+    },
+    "links": [
+      {
+        "href": "https://calculator.apps.shaunroselt.com/",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "griekwastad",
+    "name": "Griekwastad",
+    "summary": "Local community portal and resources for Griekwastad.",
+    "tags": [
+      {
+        "icon": "bi-globe2",
+        "label": "Community Site"
+      }
+    ],
+    "features": [
+      "Local news, events and community information."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://griekwastad.co.za/",
+      "title": "Griekwastad preview",
+      "sandbox": "allow-scripts",
+      "fallback": {
+        "kind": "placeholder",
+        "text": "griekwastad.co.za"
+      }
+    },
+    "links": [
+      {
+        "href": "https://griekwastad.co.za/",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "academy-shaunroselt",
+    "name": "Shaun Roselt Dev Academy",
+    "summary": "Online learning resources and tutorials from Shaun Roselt.",
+    "tags": [
+      {
+        "icon": "bi-mortarboard",
+        "label": "Learning"
+      }
+    ],
+    "features": [
+      "Courses, guides and hands-on tutorials for developers."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://academy.shaunroselt.com/",
+      "title": "Shaun Roselt Dev Academy preview",
+      "sandbox": "allow-scripts",
+      "fallback": {
+        "kind": "placeholder",
+        "text": "academy.shaunroselt.com"
+      }
+    },
+    "links": [
+      {
+        "href": "https://academy.shaunroselt.com/",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "my-personal-website",
+    "name": "My Personal Website",
+    "summary": "The site you're viewing — built with plain HTML, CSS and JavaScript.",
+    "tags": [
+      {
+        "icon": "bi-house",
+        "label": "Portfolio"
+      },
+      {
+        "icon": "bi-file-code",
+        "label": "Static Site"
+      }
+    ],
+    "features": [
+      "Lightweight, static pages with clear layout and fast load times.",
+      "Organised showcase entries for apps, games and websites."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "index.html",
+      "title": "My Personal Website preview",
+      "sandbox": "allow-scripts allow-same-origin",
+      "fallback": {
+        "kind": "image",
+        "src": "assets/img/my-personal-website.png",
+        "alt": "My Personal Website screenshot"
+      }
+    },
+    "links": [
+      {
+        "href": "index.html",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary"
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "qr-code-generator-web",
+    "name": "QR Code Generator",
+    "summary": "Create and customise QR codes online, with download and sharing options.",
+    "tags": [
+      {
+        "icon": "bi-qr-code",
+        "label": "Web Tool"
+      },
+      {
+        "icon": "bi-globe2",
+        "label": "Web App"
+      }
+    ],
+    "features": [
+      "Simple URL mode plus advanced data types and styling options.",
+      "Export as PNG/SVG for use across platforms."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://qrcode.apps.shaunroselt.com/",
+      "title": "QR Code Generator preview",
+      "sandbox": "allow-scripts",
+      "fallback": {
+        "kind": "placeholder",
+        "text": "qrcode.apps.shaunroselt.com"
+      }
+    },
+    "links": [
+      {
+        "href": "https://qrcode.apps.shaunroselt.com/",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "roseltjs",
+    "name": "Roselt.js",
+    "summary": "A lightweight JavaScript library for DOM utilities and UI helpers.",
+    "tags": [
+      {
+        "icon": "bi-file-code",
+        "label": "Library"
+      },
+      {
+        "icon": "bi-globe2",
+        "label": "Website"
+      }
+    ],
+    "features": [
+      "Small utilities for DOM manipulation.",
+      "Modular, well-documented functions for web projects."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://www.roseltjs.org/",
+      "title": "Roselt.js preview",
+      "sandbox": "allow-scripts allow-same-origin",
+      "fallback": {
+        "kind": "placeholder",
+        "text": "www.roseltjs.org"
+      }
+    },
+    "links": [
+      {
+        "href": "https://www.roseltjs.org/",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "delphipoems",
+    "name": "Delphi Programming Poems",
+    "summary": "Programming-themed poems and reflections focusing on Delphi.",
+    "tags": [
+      {
+        "icon": "bi-journal-text",
+        "label": "Blog"
+      },
+      {
+        "icon": "bi-globe2",
+        "label": "Website"
+      }
+    ],
+    "features": [
+      "Short poems about programming and software craftsmanship.",
+      "Curated collection of Delphi-related writings."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://delphipoems.com/",
+      "title": "Delphi Programming Poems preview",
+      "sandbox": "allow-scripts allow-same-origin",
+      "fallback": {
+        "kind": "placeholder",
+        "text": "delphipoems.com"
+      }
+    },
+    "links": [
+      {
+        "href": "https://delphipoems.com/",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "halo-tracker",
+    "name": "Halo Achievement Tracker",
+    "summary": "Community site tracking Halo game achievements and statistics.",
+    "tags": [
+      {
+        "icon": "bi-trophy",
+        "label": "Gaming"
+      },
+      {
+        "icon": "bi-globe2",
+        "label": "Website"
+      }
+    ],
+    "features": [
+      "Achievement stats and progress tracking for Halo titles."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://www.halotracker.org/",
+      "title": "Halo Tracker preview",
+      "sandbox": "allow-scripts",
+      "fallback": {
+        "kind": "placeholder",
+        "text": "halotracker.org"
+      }
+    },
+    "links": [
+      {
+        "href": "https://www.halotracker.org/",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  }
+]

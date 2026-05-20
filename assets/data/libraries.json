@@ -1,0 +1,134 @@
+[
+  {
+    "id": "roselt-js",
+    "name": "Roselt.js",
+    "summary": "A vanilla JavaScript framework for building routed web apps with real HTML, persistent shell sections and file-based organisation.",
+    "tags": [
+      {
+        "icon": "bi-filetype-js",
+        "label": "JavaScript Framework"
+      },
+      {
+        "icon": "bi-diagram-3",
+        "label": "Routing"
+      },
+      {
+        "icon": "bi-window-sidebar",
+        "label": "Persistent Shell"
+      }
+    ],
+    "features": [
+      "File-based pages with optional JavaScript and CSS sidecars.",
+      "Persistent shell sections for headers, sidebars, footers and shared UI.",
+      "Gradual-adoption workflow with scaffolding, npm package and browser global builds."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://www.roseltjs.org/",
+      "title": "Roselt.js preview",
+      "sandbox": "allow-scripts",
+      "fallback": {
+        "kind": "placeholder",
+        "text": "www.roseltjs.org"
+      }
+    },
+    "links": [
+      {
+        "href": "https://www.roseltjs.org/",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      },
+      {
+        "href": "https://github.com/shaunroselt/Roselt.js",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "tunipas",
+    "name": "TUniPas",
+    "summary": "A lightweight, opinionated Delphi framework for FireMonkey apps with frame-based routing, runtime language translation and JSON-backed application settings.",
+    "tags": [
+      {
+        "icon": "bi-braces",
+        "label": "Delphi Framework"
+      },
+      {
+        "icon": "bi-translate",
+        "label": "Language Support"
+      },
+      {
+        "icon": "bi-gear",
+        "label": "App Settings"
+      }
+    ],
+    "features": [
+      "Fast frame-based routing for single-form FMX applications.",
+      "Translation catalog management with automatic form and frame application.",
+      "Nested JSON settings with dotted-key access and optional auto-save."
+    ],
+    "media": {
+      "kind": "placeholder",
+      "text": "github.com/shaunroselt/TUniPas"
+    },
+    "links": [
+      {
+        "href": "https://github.com/shaunroselt/TUniPas",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "grafana-js",
+    "name": "Grafana.js",
+    "summary": "Lightweight JavaScript helpers for embedding Grafana panels and interacting with Grafana dashboards and APIs.",
+    "tags": [
+      {
+        "icon": "bi-filetype-js",
+        "label": "JavaScript"
+      },
+      {
+        "icon": "bi-bar-chart-line",
+        "label": "Grafana"
+      },
+      {
+        "icon": "bi-plug",
+        "label": "Integration"
+      }
+    ],
+    "features": [
+      "Simplified panel embedding and URL generation.",
+      "Helpers for authenticated requests and embedding options.",
+      "Small footprint and flexible inclusion via CDN or NPM."
+    ],
+    "media": {
+      "kind": "placeholder",
+      "text": "github.com/ShaunRoselt/Grafana.js"
+    },
+    "links": [
+      {
+        "href": "https://github.com/ShaunRoselt/Grafana.js",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  }
+]

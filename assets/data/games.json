@@ -1,0 +1,68 @@
+[
+  {
+    "id": "tic-tux-toe",
+    "name": "Tic Tux Toe",
+    "summary": "A Linux-flavoured twist on classic Tic Tac Toe — Tux-themed skins, adaptive AI and local multiplayer.",
+    "tags": [
+      {
+        "icon": "bi-controller",
+        "label": "Casual"
+      },
+      {
+        "icon": "bi-pc-display",
+        "label": "PC Game"
+      },
+      {
+        "icon": "bi-joystick",
+        "label": "Local Multiplayer"
+      }
+    ],
+    "features": [
+      "Classic 3x3 Tic Tac Toe with charming Tux-themed artwork.",
+      "Adaptive AI difficulty and quick local multiplayer for two players.",
+      "Customisable boards, themes, and accessibility-friendly colour modes.",
+      "Planned Linux Flatpak builds and Steam wishlist support."
+    ],
+    "media": {
+      "kind": "image",
+      "src": "assets/img/tic-tux-toe-portfolio.svg",
+      "alt": "Tic Tux Toe placeholder screenshot"
+    },
+    "links": [
+      {
+        "title": "Web",
+        "ariaLabel": "Web",
+        "platform": "Web",
+        "icon": "bi-globe2",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "href": "https://steamcommunity.com/id/ShaunRoselt",
+        "title": "Wishlist",
+        "ariaLabel": "Wishlist",
+        "icon": "bi-heart",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      },
+      {
+        "title": "Linux Flatpak",
+        "ariaLabel": "Linux Flatpak",
+        "platform": "Linux Flathub",
+        "icon": "bi-box-seam",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  }
+]

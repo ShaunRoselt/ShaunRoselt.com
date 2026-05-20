@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Tic Tux Toe placeholder artwork</title>
+  <desc id="desc">A dark themed tic tac toe board with tux inspired accents.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1320"/>
+      <stop offset="100%" stop-color="#172738"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1bd4a4"/>
+      <stop offset="100%" stop-color="#5dc3ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="260" cy="160" r="78" fill="#0f1b28" stroke="url(#accent)" stroke-width="10"/>
+  <path d="M225 170c0-36 20-64 35-64s35 28 35 64" fill="#fff"/>
+  <path d="M245 148c0-10 8-18 18-18s18 8 18 18-8 18-18 18-18-8-18-18zm48 0c0-10 8-18 18-18s18 8 18 18-8 18-18 18-18-8-18-18z" fill="#0d1320"/>
+  <path d="M241 184c20 18 58 18 78 0" fill="none" stroke="#0d1320" stroke-width="8" stroke-linecap="round"/>
+  <rect x="505" y="190" width="590" height="590" rx="36" fill="#0d1722" stroke="url(#accent)" stroke-width="8"/>
+  <path d="M702 210v550M898 210v550M525 406h550M525 600h550" stroke="#d7e7f5" stroke-width="18" stroke-linecap="round" opacity="0.9"/>
+  <!-- Game state: O in top-left, X in top-middle, O in middle-right, X in bottom-left -->
+  <circle cx="602" cy="308" r="58" fill="none" stroke="#1bd4a4" stroke-width="18"/>
+  <path d="M768 274l64 68m0-68l-64 68" stroke="#5dc3ff" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="1002" cy="502" r="58" fill="none" stroke="#1bd4a4" stroke-width="18"/>
+  <path d="M568 668l64 68m0-68l-64 68" stroke="#5dc3ff" stroke-width="18" stroke-linecap="round"/>
+  <text x="800" y="835" text-anchor="middle" fill="#eaf4ff" font-family="Segoe UI, Roboto, Arial, sans-serif" font-size="64" font-weight="800" letter-spacing="2">TIC TUX TOE</text>
+  <text x="800" y="880" text-anchor="middle" fill="#8fb2cf" font-family="Segoe UI, Roboto, Arial, sans-serif" font-size="28">Tux-themed tic tac toe, coming soon</text>
+</svg>

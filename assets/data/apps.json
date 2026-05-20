@@ -1,0 +1,423 @@
+[
+  {
+    "id": "roselt-calculator",
+    "name": "Roselt Calculator",
+    "summary": "An all-in-one calculator for everyday math, technical work and quick problem solving, with a clean interface that scales from simple arithmetic to programmer and graphing workflows.",
+    "tags": [
+      {
+        "icon": "bi-calculator",
+        "label": "Calculator App"
+      },
+      {
+        "icon": "bi-graph-up",
+        "label": "Math Tools"
+      },
+      {
+        "icon": "bi-pc-display",
+        "label": "Desktop Utility"
+      }
+    ],
+    "features": [
+      "Standard, scientific, programmer, graphing, date and unit-conversion modes in one app.",
+      "Responsive UI designed for quick desktop use without feeling cluttered.",
+      "Clear Steam presence for downloads, updates and future release visibility."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://calculator.apps.shaunroselt.com/app.html?page=scientific&theme=dark&language=en",
+      "title": "Roselt Calculator preview",
+      "sandbox": "allow-scripts",
+      "style": "--iframe-viewport-width: 1200px;",
+      "fallback": {
+        "kind": "image",
+        "src": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4597760/3c0536fb11fd22dd8f7bbc109f5e9e23bfd631aa/ss_3c0536fb11fd22dd8f7bbc109f5e9e23bfd631aa.1920x1080.jpg?t=1778698150",
+        "alt": "Roselt Calculator screenshot",
+        "style": "transition: opacity 320ms; opacity: 0; display: none;"
+      }
+    },
+    "links": [
+      {
+        "href": "https://calculator.apps.shaunroselt.com/app.html?page=scientific&theme=dark&language=en",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      },
+      {
+        "href": "https://store.steampowered.com/app/4597760/Roselt_Calculator/",
+        "title": "Steam",
+        "ariaLabel": "Steam",
+        "icon": "bi-steam",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      },
+      {
+        "title": "Linux Flathub",
+        "ariaLabel": "Linux Flathub",
+        "platform": "Linux Flathub",
+        "icon": "bi-box-seam",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Microsoft Store",
+        "ariaLabel": "Microsoft Store",
+        "platform": "Microsoft Store",
+        "icon": "bi-microsoft",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Google Play Store",
+        "ariaLabel": "Google Play Store",
+        "platform": "Google Play Store",
+        "icon": "bi-google-play",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Apple App Store",
+        "ariaLabel": "Apple App Store",
+        "platform": "Apple App Store",
+        "icon": "bi-apple",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "qr-code-generator",
+    "name": "QR Code Generator",
+    "summary": "Quick QR code generator with URL mode, customisation and download options.",
+    "tags": [
+      {
+        "icon": "bi-qr-code",
+        "label": "QR Generator"
+      },
+      {
+        "icon": "bi-download",
+        "label": "Export"
+      }
+    ],
+    "features": [
+      "Generate QR codes from URLs, text and contact details.",
+      "Customisable size, colour and error correction levels."
+    ],
+    "media": {
+      "kind": "iframe",
+      "src": "https://qrcode.apps.shaunroselt.com/?page=url",
+      "title": "QR Code Generator preview",
+      "sandbox": "allow-scripts",
+      "style": "--iframe-viewport-width: 1200px;",
+      "fallback": {
+        "kind": "placeholder",
+        "text": "qrcode.apps.shaunroselt.com"
+      }
+    },
+    "links": [
+      {
+        "href": "https://qrcode.apps.shaunroselt.com/?page=url",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "roselt-developer-tools",
+    "name": "Roselt Developer Tools",
+    "summary": "A collection of focused utilities built to speed up repetitive developer tasks and keep the small-but-important workflow details out of the way.",
+    "tags": [
+      {
+        "icon": "bi-tools",
+        "label": "Developer Toolkit"
+      },
+      {
+        "icon": "bi-code-slash",
+        "label": "Code Helpers"
+      },
+      {
+        "icon": "bi-lightning-charge",
+        "label": "Workflow Utility"
+      }
+    ],
+    "features": [
+      "Designed around practical helper flows instead of generic feature sprawl.",
+      "Best suited for fast daily use when switching between common development tasks.",
+      "Good fit for linking out to repos, downloads or docs as the toolset expands."
+    ],
+    "media": {
+      "kind": "image-link",
+      "href": "assets/img/roselt-developer-tools-portfolio.png",
+      "src": "assets/img/roselt-developer-tools-portfolio.png",
+      "alt": "Roselt Developer Tools screenshot",
+      "lightbox": true,
+      "gallery": "appsShowcaseGallery"
+    },
+    "links": [
+      {
+        "title": "Web",
+        "ariaLabel": "Web",
+        "platform": "Web",
+        "icon": "bi-globe2",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Steam",
+        "ariaLabel": "Steam",
+        "platform": "Steam",
+        "icon": "bi-steam",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Linux Flathub",
+        "ariaLabel": "Linux Flathub",
+        "platform": "Linux Flathub",
+        "icon": "bi-box-seam",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Microsoft Store",
+        "ariaLabel": "Microsoft Store",
+        "platform": "Microsoft Store",
+        "icon": "bi-microsoft",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Google Play Store",
+        "ariaLabel": "Google Play Store",
+        "platform": "Google Play Store",
+        "icon": "bi-google-play",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Apple App Store",
+        "ariaLabel": "Apple App Store",
+        "platform": "Apple App Store",
+        "icon": "bi-apple",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "delphi-turtle",
+    "name": "Delphi Turtle",
+    "summary": "A beginner-friendly learning environment for Delphi programming that pairs an interactive code editor with turtle graphics so students can see programming concepts take shape immediately.",
+    "tags": [
+      {
+        "icon": "bi-mortarboard",
+        "label": "Learning Environment"
+      },
+      {
+        "icon": "bi-braces",
+        "label": "Delphi Programming"
+      },
+      {
+        "icon": "bi-bezier2",
+        "label": "Turtle Graphics"
+      }
+    ],
+    "features": [
+      "Built to lower the barrier to learning Delphi with an IDE-like editing experience.",
+      "Lets students drive turtle graphics with Delphi functions while following illustrated guidance.",
+      "Currently in Early Access with planned expansion for fuller Delphi and turtle support."
+    ],
+    "media": {
+      "kind": "image-link",
+      "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1516170/710a7e9393902847f7c0e1c21c9927d6aeff0598/ss_710a7e9393902847f7c0e1c21c9927d6aeff0598.1920x1080.jpg?t=1771150428",
+      "src": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1516170/710a7e9393902847f7c0e1c21c9927d6aeff0598/ss_710a7e9393902847f7c0e1c21c9927d6aeff0598.1920x1080.jpg?t=1771150428",
+      "alt": "Delphi Turtle screenshot",
+      "target": "_blank",
+      "rel": "noreferrer noopener"
+    },
+    "links": [
+      {
+        "title": "Web",
+        "ariaLabel": "Web",
+        "platform": "Web",
+        "icon": "bi-globe2",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "href": "https://store.steampowered.com/app/1516170/Delphi_Turtle_Learn_Programming/",
+        "title": "Steam",
+        "ariaLabel": "Steam",
+        "icon": "bi-steam",
+        "style": "primary",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      },
+      {
+        "title": "Linux Flathub",
+        "ariaLabel": "Linux Flathub",
+        "platform": "Linux Flathub",
+        "icon": "bi-box-seam",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Microsoft Store",
+        "ariaLabel": "Microsoft Store",
+        "platform": "Microsoft Store",
+        "icon": "bi-microsoft",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Google Play Store",
+        "ariaLabel": "Google Play Store",
+        "platform": "Google Play Store",
+        "icon": "bi-google-play",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Apple App Store",
+        "ariaLabel": "Apple App Store",
+        "platform": "Apple App Store",
+        "icon": "bi-apple",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  },
+  {
+    "id": "programming-helper",
+    "name": "Programming Helper",
+    "summary": "A compact helper surface for quick references, code-facing notes and everyday development lookups when you want answers fast instead of digging through tabs.",
+    "tags": [
+      {
+        "icon": "bi-journal-code",
+        "label": "Reference Tool"
+      },
+      {
+        "icon": "bi-globe2",
+        "label": "Web App"
+      },
+      {
+        "icon": "bi-book",
+        "label": "Learning Resource"
+      }
+    ],
+    "features": [
+      "Built around short-path access to useful coding information and examples.",
+      "Clean enough to browse casually, structured enough to be genuinely practical.",
+      "Works well as an info-first listing with links to docs, repos or the live app."
+    ],
+    "media": {
+      "kind": "image-link",
+      "href": "assets/img/programming-helper-portfolio.png",
+      "src": "assets/img/programming-helper-portfolio.png",
+      "alt": "Programming Helper screenshot",
+      "lightbox": true,
+      "gallery": "appsShowcaseGallery"
+    },
+    "links": [
+      {
+        "href": "websites.html#programming-helper",
+        "title": "Web",
+        "ariaLabel": "Web",
+        "icon": "bi-globe2",
+        "style": "primary"
+      },
+      {
+        "title": "Steam",
+        "ariaLabel": "Steam",
+        "platform": "Steam",
+        "icon": "bi-steam",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Linux Flathub",
+        "ariaLabel": "Linux Flathub",
+        "platform": "Linux Flathub",
+        "icon": "bi-box-seam",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Microsoft Store",
+        "ariaLabel": "Microsoft Store",
+        "platform": "Microsoft Store",
+        "icon": "bi-microsoft",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Google Play Store",
+        "ariaLabel": "Google Play Store",
+        "platform": "Google Play Store",
+        "icon": "bi-google-play",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "title": "Apple App Store",
+        "ariaLabel": "Apple App Store",
+        "platform": "Apple App Store",
+        "icon": "bi-apple",
+        "style": "outline",
+        "comingSoon": true
+      },
+      {
+        "href": "https://github.com/shaunroselt",
+        "title": "GitHub",
+        "ariaLabel": "GitHub",
+        "icon": "bi-github",
+        "style": "outline",
+        "target": "_blank",
+        "rel": "noreferrer noopener"
+      }
+    ]
+  }
+]
