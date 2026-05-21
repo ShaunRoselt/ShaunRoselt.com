@@ -107,10 +107,9 @@
     }
 
     if (media.kind === "iframe") {
-      // Ensure sandbox contains allow-same-origin when allow-scripts is requested
       let sandboxValue = media.sandbox;
-      if (typeof sandboxValue === 'string' && sandboxValue.indexOf('allow-scripts') !== -1 && sandboxValue.indexOf('allow-same-origin') === -1) {
-        sandboxValue = (sandboxValue + ' allow-same-origin').trim();
+      if (typeof sandboxValue === "string" && sandboxValue.includes("allow-scripts") && !sandboxValue.includes("allow-same-origin")) {
+        sandboxValue = `${sandboxValue} allow-same-origin`.trim();
       }
 
       return `

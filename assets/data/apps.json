@@ -31,8 +31,7 @@
       "fallback": {
         "kind": "image",
         "src": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4597760/3c0536fb11fd22dd8f7bbc109f5e9e23bfd631aa/ss_3c0536fb11fd22dd8f7bbc109f5e9e23bfd631aa.1920x1080.jpg?t=1778698150",
-        "alt": "Roselt Calculator screenshot",
-        "style": "transition: opacity 320ms; opacity: 0; display: none;"
+        "alt": "Roselt Calculator screenshot"
       }
     },
     "links": [
