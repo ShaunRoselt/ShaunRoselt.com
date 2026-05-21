@@ -26,7 +26,7 @@
       "kind": "iframe",
       "src": "https://calculator.apps.shaunroselt.com/app.html?page=scientific&theme=dark&language=en",
       "title": "Roselt Calculator preview",
-      "sandbox": "allow-scripts",
+      "sandbox": "allow-scripts allow-same-origin",
       "style": "--iframe-viewport-width: 1200px;",
       "fallback": {
         "kind": "image",
@@ -119,7 +119,7 @@
       "kind": "iframe",
       "src": "https://qrcode.apps.shaunroselt.com/?page=url",
       "title": "QR Code Generator preview",
-      "sandbox": "allow-scripts",
+      "sandbox": "allow-scripts allow-same-origin",
       "style": "--iframe-viewport-width: 1200px;",
       "fallback": {
         "kind": "placeholder",

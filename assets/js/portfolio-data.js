@@ -107,12 +107,18 @@
     }
 
     if (media.kind === "iframe") {
+      // Ensure sandbox contains allow-same-origin when allow-scripts is requested
+      let sandboxValue = media.sandbox;
+      if (typeof sandboxValue === 'string' && sandboxValue.indexOf('allow-scripts') !== -1 && sandboxValue.indexOf('allow-same-origin') === -1) {
+        sandboxValue = (sandboxValue + ' allow-same-origin').trim();
+      }
+
       return `
             <div class="showcase-media">
               <iframe${renderAttributes({
         src: media.src,
         title: media.title,
-        sandbox: media.sandbox,
+        sandbox: sandboxValue,
         scrolling: media.scrolling || "no",
         loading: media.loading || "lazy",
         "aria-hidden": media.ariaHidden || "true",

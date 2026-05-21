@@ -21,7 +21,7 @@
       "kind": "iframe",
       "src": "https://csshexagon.shaunroselt.com/",
       "title": "CSS Hexagon Generator preview",
-      "sandbox": "allow-scripts",
+      "sandbox": "allow-scripts allow-same-origin",
       "fallback": {
         "kind": "image",
         "src": "assets/img/css-hexagon-generator-portfolio.png",
@@ -115,7 +115,7 @@
       "kind": "iframe",
       "src": "https://calculator.apps.shaunroselt.com/",
       "title": "Roselt Calculator preview",
-      "sandbox": "allow-scripts",
+      "sandbox": "allow-scripts allow-same-origin",
       "fallback": {
         "kind": "image",
         "src": "assets/img/roselt-calculator-web-portfolio.png",
@@ -160,7 +160,7 @@
       "kind": "iframe",
       "src": "https://griekwastad.co.za/",
       "title": "Griekwastad preview",
-      "sandbox": "allow-scripts",
+      "sandbox": "allow-scripts allow-same-origin",
       "fallback": {
         "kind": "placeholder",
         "text": "griekwastad.co.za"
@@ -195,7 +195,7 @@
       "kind": "iframe",
       "src": "https://academy.shaunroselt.com/",
       "title": "Shaun Roselt Dev Academy preview",
-      "sandbox": "allow-scripts",
+      "sandbox": "allow-scripts allow-same-origin",
       "fallback": {
         "kind": "placeholder",
         "text": "academy.shaunroselt.com"
@@ -283,7 +283,7 @@
       "kind": "iframe",
       "src": "https://qrcode.apps.shaunroselt.com/",
       "title": "QR Code Generator preview",
-      "sandbox": "allow-scripts",
+      "sandbox": "allow-scripts allow-same-origin",
       "fallback": {
         "kind": "placeholder",
         "text": "qrcode.apps.shaunroselt.com"
@@ -411,7 +411,7 @@
       "kind": "iframe",
       "src": "https://www.halotracker.org/",
       "title": "Halo Tracker preview",
-      "sandbox": "allow-scripts",
+      "sandbox": "allow-scripts allow-same-origin",
       "fallback": {
         "kind": "placeholder",
         "text": "halotracker.org"

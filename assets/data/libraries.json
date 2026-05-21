@@ -26,7 +26,7 @@
       "kind": "iframe",
       "src": "https://www.roseltjs.org/",
       "title": "Roselt.js preview",
-      "sandbox": "allow-scripts",
+      "sandbox": "allow-scripts allow-same-origin",
       "fallback": {
         "kind": "placeholder",
         "text": "www.roseltjs.org"
