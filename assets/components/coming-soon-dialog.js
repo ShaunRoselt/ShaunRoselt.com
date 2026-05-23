@@ -1,8 +1,8 @@
 (function () {
-  "use strict";
+    "use strict";
 
-  const TEMPLATE = document.createElement("template");
-  TEMPLATE.innerHTML = `
+    const TEMPLATE = document.createElement("template");
+    TEMPLATE.innerHTML = `
     <style>
       :host {
         display: contents;
@@ -244,131 +244,131 @@
     </dialog>
   `;
 
-  class ComingSoonDialogElement extends HTMLElement {
-    constructor() {
-      super();
-      this._dialog = null;
-      this._platformEl = null;
-      this._descriptionEl = null;
-      this._lastTrigger = null;
-      this._previousBodyOverflow = "";
-      this._initialized = false;
-      this._boundDocumentClick = this._handleDocumentClick.bind(this);
-      this._boundDialogClick = this._handleDialogClick.bind(this);
-      this._boundDialogClose = this._handleDialogClose.bind(this);
-      this._boundDialogCancel = this._handleDialogCancel.bind(this);
+    class ComingSoonDialogElement extends HTMLElement {
+        constructor() {
+            super();
+            this._dialog = null;
+            this._platformEl = null;
+            this._descriptionEl = null;
+            this._lastTrigger = null;
+            this._previousBodyOverflow = "";
+            this._initialized = false;
+            this._boundDocumentClick = this._handleDocumentClick.bind(this);
+            this._boundDialogClick = this._handleDialogClick.bind(this);
+            this._boundDialogClose = this._handleDialogClose.bind(this);
+            this._boundDialogCancel = this._handleDialogCancel.bind(this);
+        }
+
+        connectedCallback() {
+            if (this._initialized) return;
+
+            if (!this.shadowRoot) {
+                this.attachShadow({ mode: "open" });
+            }
+
+            if (!this.shadowRoot.hasChildNodes()) {
+                this.shadowRoot.appendChild(TEMPLATE.content.cloneNode(true));
+            }
+
+            this._dialog = this.shadowRoot.querySelector("dialog");
+            this._platformEl = this.shadowRoot.querySelector("[data-coming-soon-platform-name]");
+            this._descriptionEl = this.shadowRoot.querySelector("#comingSoonModalDescription");
+
+            this._dialog.addEventListener("click", this._boundDialogClick);
+            this._dialog.addEventListener("close", this._boundDialogClose);
+            this._dialog.addEventListener("cancel", this._boundDialogCancel);
+            document.addEventListener("click", this._boundDocumentClick);
+            this._initialized = true;
+
+            if (!window.ComingSoonDialog) {
+                window.ComingSoonDialog = {
+                    show: (platform, trigger) => this.show(platform, trigger),
+                    hide: () => this.hide()
+                };
+            }
+        }
+
+        disconnectedCallback() {
+            this._initialized = false;
+
+            if (this._dialog && this._dialog.open) {
+                this._dialog.close();
+            }
+
+            document.removeEventListener("click", this._boundDocumentClick);
+
+            if (this._dialog) {
+                this._dialog.removeEventListener("click", this._boundDialogClick);
+                this._dialog.removeEventListener("close", this._boundDialogClose);
+                this._dialog.removeEventListener("cancel", this._boundDialogCancel);
+            }
+        }
+
+        show(platform, trigger) {
+            if (!this._dialog) return;
+
+            const platformLabel = platform || "This platform";
+            if (this._platformEl) {
+                this._platformEl.textContent = platformLabel;
+            }
+            if (this._descriptionEl) {
+                this._descriptionEl.textContent = `${platformLabel} support is coming soon. For now, the app is available on the platforms that are already linked here.`;
+            }
+
+            this._lastTrigger = trigger || document.activeElement;
+            this._previousBodyOverflow = document.body.style.overflow;
+            document.body.style.overflow = "hidden";
+
+            if (!this._dialog.open) {
+                this._dialog.showModal();
+            }
+
+            const closeButton = this.shadowRoot.querySelector("[data-coming-soon-close]");
+            if (closeButton) {
+                closeButton.focus();
+            }
+        }
+
+        hide() {
+            if (!this._dialog || !this._dialog.open) return;
+            this._dialog.close();
+        }
+
+        _restoreFocus() {
+            document.body.style.overflow = this._previousBodyOverflow;
+
+            if (this._lastTrigger && typeof this._lastTrigger.focus === "function") {
+                this._lastTrigger.focus();
+            }
+
+            this._lastTrigger = null;
+        }
+
+        _handleDocumentClick(event) {
+            const trigger = event.target.closest(".button-coming-soon");
+            if (!trigger || !this.isConnected) return;
+
+            event.preventDefault();
+            this.show(trigger.getAttribute("data-coming-soon-platform") || "This platform", trigger);
+        }
+
+        _handleDialogClick(event) {
+            if (event.target === this._dialog) {
+                this.hide();
+            }
+        }
+
+        _handleDialogClose() {
+            this._restoreFocus();
+        }
+
+        _handleDialogCancel(event) {
+            event.preventDefault();
+            this.hide();
+        }
     }
 
-    connectedCallback() {
-      if (this._initialized) return;
-
-      if (!this.shadowRoot) {
-        this.attachShadow({ mode: "open" });
-      }
-
-      if (!this.shadowRoot.hasChildNodes()) {
-        this.shadowRoot.appendChild(TEMPLATE.content.cloneNode(true));
-      }
-
-      this._dialog = this.shadowRoot.querySelector("dialog");
-      this._platformEl = this.shadowRoot.querySelector("[data-coming-soon-platform-name]");
-      this._descriptionEl = this.shadowRoot.querySelector("#comingSoonModalDescription");
-
-      this._dialog.addEventListener("click", this._boundDialogClick);
-      this._dialog.addEventListener("close", this._boundDialogClose);
-      this._dialog.addEventListener("cancel", this._boundDialogCancel);
-      document.addEventListener("click", this._boundDocumentClick);
-      this._initialized = true;
-
-      if (!window.ComingSoonDialog) {
-        window.ComingSoonDialog = {
-          show: (platform, trigger) => this.show(platform, trigger),
-          hide: () => this.hide()
-        };
-      }
+    if (!window.customElements.get("coming-soon-dialog")) {
+        window.customElements.define("coming-soon-dialog", ComingSoonDialogElement);
     }
-
-    disconnectedCallback() {
-      this._initialized = false;
-
-      if (this._dialog && this._dialog.open) {
-        this._dialog.close();
-      }
-
-      document.removeEventListener("click", this._boundDocumentClick);
-
-      if (this._dialog) {
-        this._dialog.removeEventListener("click", this._boundDialogClick);
-        this._dialog.removeEventListener("close", this._boundDialogClose);
-        this._dialog.removeEventListener("cancel", this._boundDialogCancel);
-      }
-    }
-
-    show(platform, trigger) {
-      if (!this._dialog) return;
-
-      const platformLabel = platform || "This platform";
-      if (this._platformEl) {
-        this._platformEl.textContent = platformLabel;
-      }
-      if (this._descriptionEl) {
-        this._descriptionEl.textContent = `${platformLabel} support is coming soon. For now, the app is available on the platforms that are already linked here.`;
-      }
-
-      this._lastTrigger = trigger || document.activeElement;
-      this._previousBodyOverflow = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-
-      if (!this._dialog.open) {
-        this._dialog.showModal();
-      }
-
-      const closeButton = this.shadowRoot.querySelector("[data-coming-soon-close]");
-      if (closeButton) {
-        closeButton.focus();
-      }
-    }
-
-    hide() {
-      if (!this._dialog || !this._dialog.open) return;
-      this._dialog.close();
-    }
-
-    _restoreFocus() {
-      document.body.style.overflow = this._previousBodyOverflow;
-
-      if (this._lastTrigger && typeof this._lastTrigger.focus === "function") {
-        this._lastTrigger.focus();
-      }
-
-      this._lastTrigger = null;
-    }
-
-    _handleDocumentClick(event) {
-      const trigger = event.target.closest(".button-coming-soon");
-      if (!trigger || !this.isConnected) return;
-
-      event.preventDefault();
-      this.show(trigger.getAttribute("data-coming-soon-platform") || "This platform", trigger);
-    }
-
-    _handleDialogClick(event) {
-      if (event.target === this._dialog) {
-        this.hide();
-      }
-    }
-
-    _handleDialogClose() {
-      this._restoreFocus();
-    }
-
-    _handleDialogCancel(event) {
-      event.preventDefault();
-      this.hide();
-    }
-  }
-
-  if (!window.customElements.get("coming-soon-dialog")) {
-    window.customElements.define("coming-soon-dialog", ComingSoonDialogElement);
-  }
 })();

@@ -728,6 +728,71 @@ a:hover {
   background-color: #fff;
 }
 
+.portfolio-path-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.75rem 1.75rem 1.5rem;
+  border-radius: 14px;
+  color: #1e1e1e;
+  text-decoration: none;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.portfolio-path-card:hover,
+.portfolio-path-card:focus {
+  color: #1e1e1e;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 32px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-path-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 0.875rem;
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+
+.portfolio-path-apps     { background: linear-gradient(135deg, #0f4c81, #1b7fc3); }
+.portfolio-path-games    { background: linear-gradient(135deg, #5a2766, #a4396f); }
+.portfolio-path-websites { background: linear-gradient(135deg, #15605e, #1f8f88); }
+.portfolio-path-libraries{ background: linear-gradient(135deg, #3b4d15, #728c1f); }
+
+.portfolio-path-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-path-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #4e4e4e;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.portfolio-path-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #0078ff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.portfolio-path-card:hover .portfolio-path-link,
+.portfolio-path-card:focus .portfolio-path-link {
+  color: #005ec7;
+}
+
 .work-box:hover img {
   transform: scale(1.3);
 }

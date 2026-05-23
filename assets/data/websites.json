@@ -183,6 +183,78 @@
     ]
   },
   {
+    "id": "simac",
+    "name": "SIMAC",
+    "summary": "Short Interval Monitoring and Control dashboard created for a client operations workflow.",
+    "ownership": "client",
+    "tags": [
+      {
+        "icon": "bi-speedometer2",
+        "label": "Operations Dashboard"
+      },
+      {
+        "icon": "bi-building",
+        "label": "Made for Others"
+      }
+    ],
+    "features": [
+      "Operational status and control views designed for quick decision-making.",
+      "Purpose-built interface focused on short-interval monitoring workflows."
+    ],
+    "media": {
+      "kind": "image",
+      "src": "assets/img/simac-portfolio.png",
+      "alt": "SIMAC screenshot"
+    },
+    "links": [
+      {
+        "href": "assets/img/simac-portfolio.png",
+        "title": "Preview",
+        "ariaLabel": "Preview SIMAC screenshot",
+        "icon": "bi-image",
+        "style": "primary",
+        "lightbox": true,
+        "gallery": "websitesShowcaseGallery"
+      }
+    ]
+  },
+  {
+    "id": "jojo-monitor",
+    "name": "JoJo Monitor",
+    "summary": "IoT tank level monitoring dashboard delivered for a client website project.",
+    "ownership": "client",
+    "tags": [
+      {
+        "icon": "bi-broadcast",
+        "label": "IoT Monitoring"
+      },
+      {
+        "icon": "bi-building",
+        "label": "Made for Others"
+      }
+    ],
+    "features": [
+      "Tracks JoJo tank levels through a clean monitoring interface.",
+      "Built to surface device data clearly for day-to-day client use."
+    ],
+    "media": {
+      "kind": "image",
+      "src": "assets/img/jojo-monitor.png",
+      "alt": "JoJo Monitor screenshot"
+    },
+    "links": [
+      {
+        "href": "assets/img/jojo-monitor.png",
+        "title": "Preview",
+        "ariaLabel": "Preview JoJo Monitor screenshot",
+        "icon": "bi-image",
+        "style": "primary",
+        "lightbox": true,
+        "gallery": "websitesShowcaseGallery"
+      }
+    ]
+  },
+  {
     "id": "academy-shaunroselt",
     "name": "Shaun Roselt Dev Academy",
     "summary": "Online learning resources and tutorials from Shaun Roselt.",
