@@ -66,21 +66,7 @@
     elCS2.setAttribute("data-purecounter-end", cs2);
   }
 
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top');
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active');
-      } else {
-        backtotop.classList.remove('active');
-      }
-    }
-    window.addEventListener('load', toggleBacktotop);
-    onscroll(document, toggleBacktotop);
-  }
+
 
   /**
    * Intro type effect
@@ -126,101 +112,6 @@
   };
 
   try { initPortfolioLightbox(); } catch (e) { /* ignore */ }
-
-  /**
-   * Coming soon buttons
-   */
-  let lastComingSoonTrigger = null;
-
-  const ensureComingSoonModal = () => {
-    let modalEl = select('#comingSoonModal');
-    if (modalEl) return modalEl;
-
-    modalEl = document.createElement('div');
-    modalEl.className = 'showcase-coming-soon-modal';
-    modalEl.id = 'comingSoonModal';
-    modalEl.hidden = true;
-    modalEl.setAttribute('role', 'dialog');
-    modalEl.setAttribute('aria-modal', 'true');
-    modalEl.setAttribute('aria-labelledby', 'comingSoonModalTitle');
-    modalEl.setAttribute('aria-describedby', 'comingSoonModalDescription');
-    modalEl.innerHTML = `
-      <div class="showcase-coming-soon-dialog" role="document">
-        <div class="showcase-coming-soon-header">
-          <div>
-            <span class="showcase-coming-soon-kicker"><i class="bi bi-stars" aria-hidden="true"></i> Platform update</span>
-            <h2 class="showcase-coming-soon-title" id="comingSoonModalTitle">Store support is on the way</h2>
-          </div>
-          <button type="button" class="showcase-coming-soon-close" data-coming-soon-close aria-label="Close popup">
-            <i class="bi bi-x-lg" aria-hidden="true"></i>
-          </button>
-        </div>
-        <div class="showcase-coming-soon-body">
-          <p id="comingSoonModalDescription">This storefront is planned, but it is not live yet.</p>
-          <div class="showcase-coming-soon-platform">
-            <i class="bi bi-shop" aria-hidden="true"></i>
-            <span id="comingSoonPlatformName"></span>
-          </div>
-        </div>
-        <div class="showcase-coming-soon-actions">
-          <button type="button" class="button button-a" data-coming-soon-close>Close</button>
-        </div>
-      </div>
-    `;
-
-    modalEl.addEventListener('click', (event) => {
-      if (event.target === modalEl || event.target.closest('[data-coming-soon-close]')) {
-        hideComingSoonModal();
-      }
-    });
-
-    document.body.appendChild(modalEl);
-    return modalEl;
-  };
-
-  const hideComingSoonModal = () => {
-    const modalEl = select('#comingSoonModal');
-    if (!modalEl || modalEl.hidden) return;
-
-    modalEl.hidden = true;
-    document.body.classList.remove('showcase-modal-open');
-
-    if (lastComingSoonTrigger && typeof lastComingSoonTrigger.focus === 'function') {
-      lastComingSoonTrigger.focus();
-    }
-  };
-
-  const showComingSoonModal = (platform, trigger) => {
-    const modalEl = ensureComingSoonModal();
-    const platformEl = modalEl.querySelector('#comingSoonPlatformName');
-    const descriptionEl = modalEl.querySelector('#comingSoonModalDescription');
-    if (platformEl) {
-      platformEl.textContent = platform;
-    }
-    if (descriptionEl) {
-      descriptionEl.textContent = `${platform} support is coming soon. For now, the app is available on the platforms that are already linked here.`;
-    }
-
-    lastComingSoonTrigger = trigger || document.activeElement;
-    modalEl.hidden = false;
-    document.body.classList.add('showcase-modal-open');
-
-    const closeButton = modalEl.querySelector('[data-coming-soon-close]');
-    if (closeButton) {
-      closeButton.focus();
-    }
-  };
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      hideComingSoonModal();
-    }
-  });
-
-  on('click', '.button-coming-soon', function (event) {
-    event.preventDefault();
-    showComingSoonModal(this.getAttribute('data-coming-soon-platform') || 'This platform', this);
-  }, true);
 
   /**
    * Compact showcase cards to preserve media height
@@ -302,6 +193,21 @@
   const WEBSITE_IFRAME_ZOOM = 0.9;
   let iframeScaleInitialized = false;
   let iframeScaleRaf = null;
+  let lastShowcaseScrollIntentAt = 0;
+
+  ["wheel", "touchmove"].forEach(eventName => {
+    window.addEventListener(eventName, () => {
+      lastShowcaseScrollIntentAt = Date.now();
+      delete window.__portfolioScrollTarget;
+    }, { passive: true });
+  });
+
+  window.addEventListener('keydown', event => {
+    if (["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", " "].includes(event.key)) {
+      lastShowcaseScrollIntentAt = Date.now();
+      delete window.__portfolioScrollTarget;
+    }
+  });
 
   const getShowcaseIframeViewportWidth = (iframe) => {
     const category = iframe.closest('[data-portfolio-category]')?.dataset.portfolioCategory;
@@ -321,8 +227,11 @@
       let scale = Math.min(parentWidth / iframeViewportWidth, parentHeight / iframeViewportHeight);
       if (!isFinite(scale) || scale <= 0) scale = 1;
       if (scale > 1) scale = 1;
+      const scaledWidth = iframeViewportWidth * scale;
+      const offsetX = Math.max((parentWidth - scaledWidth) / 2, 0);
       iframe.style.setProperty('--iframe-scale', String(scale));
       iframe.style.setProperty('--iframe-viewport-width', iframeViewportWidth + 'px');
+      iframe.style.setProperty('--iframe-offset-x', offsetX + 'px');
     });
   };
 
@@ -338,13 +247,44 @@
     const iframes = select('.showcase-media iframe', true) || [];
     if (!iframes.length) return;
 
+    const shouldKeepFallbackVisible = (iframe, fallback) => {
+      if (window.location.protocol !== 'file:') return false;
+
+      // Only force screenshot fallbacks on local file previews. Placeholder
+      // fallbacks can allow the remote iframe to attempt a real load.
+      if (!fallback || fallback.tagName !== 'IMG') return false;
+
+      try {
+        const iframeUrl = new URL(iframe.getAttribute('src') || '', window.location.href);
+        return iframeUrl.protocol !== 'file:';
+      } catch (e) {
+        return false;
+      }
+    };
+
     iframes.forEach(iframe => {
       const fallback = iframe.parentElement ? iframe.parentElement.querySelector('.showcase-fallback') : null;
+
+      if (shouldKeepFallbackVisible(iframe, fallback)) {
+        iframe.style.display = 'none';
+        if (fallback) {
+          fallback.style.opacity = '1';
+          fallback.style.display = 'block';
+        }
+        return;
+      }
+
+      // Only attempt to reset iframe internal scroll if same-origin access is available.
+      // Avoid calling this on cross-origin frames to prevent any incidental layout/scroll side-effects.
       const resetIframeScroll = () => {
         try {
           const frameWindow = iframe.contentWindow;
           const frameDoc = iframe.contentDocument || frameWindow?.document;
           if (!frameWindow || !frameDoc) return;
+
+          // Feature-detect same-origin access by reading a harmless property
+          // and bailing early if access is blocked.
+          void frameWindow.location.href;
 
           if ('scrollRestoration' in frameWindow.history) {
             frameWindow.history.scrollRestoration = 'manual';
@@ -354,7 +294,7 @@
           frameDoc.documentElement.scrollTop = 0;
           if (frameDoc.body) frameDoc.body.scrollTop = 0;
         } catch (e) {
-          // cross-origin or sandboxed without same-origin access
+          // cross-origin or sandboxed without same-origin access; skip
         }
       };
 
@@ -372,11 +312,45 @@
         }
       };
 
+      const getPageScrollTarget = () => {
+        const portfolioTarget = window.__portfolioScrollTarget;
+        return Number.isFinite(portfolioTarget) ? portfolioTarget : window.scrollY;
+      };
+
+      const restorePageScroll = (top) => {
+        if (!Number.isFinite(top)) return;
+        const guardStartedAt = Date.now();
+        const guardUntil = Date.now() + 4200;
+
+        const correctScroll = () => {
+          if (lastShowcaseScrollIntentAt > guardStartedAt) return;
+
+          const activeElement = document.activeElement;
+          if (activeElement === iframe && typeof activeElement.blur === 'function') {
+            activeElement.blur();
+          }
+
+          if (Math.abs(window.scrollY - top) > 8 && Date.now() - lastShowcaseScrollIntentAt > 350) {
+            window.scrollTo({ top, left: 0, behavior: 'auto' });
+          }
+
+          if (Date.now() < guardUntil) {
+            window.requestAnimationFrame(correctScroll);
+          }
+        };
+
+        window.requestAnimationFrame(correctScroll);
+        window.setTimeout(correctScroll, 180);
+        window.setTimeout(correctScroll, 900);
+      };
+
       const handleLoad = () => {
+        const pageScrollTop = getPageScrollTarget();
         resetIframeScroll();
-        window.requestAnimationFrame(resetIframeScroll);
-        window.setTimeout(resetIframeScroll, 160);
-        hideFallback();
+        if (!shouldKeepFallbackVisible(iframe, fallback)) {
+          hideFallback();
+        }
+        restorePageScroll(pageScrollTop);
       };
 
       if (iframe.dataset.showcaseIframeInitialized !== 'true') {
@@ -390,7 +364,7 @@
           handleLoad();
         }
       } catch (e) {
-        // cross-origin access will throw — ignore and continue to attach listener
+        // cross-origin access will throw, so ignore and continue to attach listener
       }
     });
 

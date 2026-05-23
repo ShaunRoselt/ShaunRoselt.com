@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.1.4/swiper-bundle.min.css">
-  <link rel="stylesheet" href="assets/components/site-header/site-header.css">
 
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -26,9 +25,10 @@
 </head>
 
 <body>
-  <div data-site-header></div>
+  <site-header></site-header>
   <script src="assets/js/portfolio-data.js"></script>
-  <script src="assets/components/site-header/site-header.js"></script>
+  <script src="assets/components/site-header.js"></script>
+  <script src="assets/components/site-footer.js"></script>
 
   <!-- ======= Hero Section ======= -->
   <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/hero-bg.jpg)">
@@ -391,152 +391,45 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/roselt-developer-tools-portfolio.png" data-gallery="portfolioGallery"
-                class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/roselt-developer-tools-portfolio.png" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Roselt Developer Tools</h2>
-                    <div class="w-more">
-                      A Collection of utilities for developers
-                    </div>
-                  </div>
-                  <div class="col-sm-2 d-none">
-                    <div class="w-like">
-                      <a href="#work"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
+          <div class="col-md-6">
+            <a class="work-box portfolio-path-card" href="apps.html" aria-label="Open Apps portfolio page">
+              <div class="portfolio-path-icon portfolio-path-apps">
+                <i class="bi bi-window"></i>
               </div>
-            </div>
+              <h2 class="portfolio-path-title">Apps</h2>
+              <p class="portfolio-path-desc">Desktop, mobile and web apps built for practical workflows, utility and everyday problem solving.</p>
+              <span class="portfolio-path-link">Open Apps <i class="bi bi-arrow-right"></i></span>
+            </a>
           </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/programming-helper-portfolio.png" data-gallery="portfolioGallery"
-                class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/programming-helper-portfolio.png" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Programming Helper</h2>
-                    <div class="w-more">
-                      Tutorials and references for developers
-                    </div>
-                  </div>
-                  <div class="col-sm-2 d-none">
-                    <div class="w-like">
-                      <a href="#work"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
+          <div class="col-md-6">
+            <a class="work-box portfolio-path-card" href="games.html" aria-label="Open Games portfolio page">
+              <div class="portfolio-path-icon portfolio-path-games">
+                <i class="bi bi-controller"></i>
               </div>
-            </div>
+              <h2 class="portfolio-path-title">Games</h2>
+              <p class="portfolio-path-desc">Playable ideas, game concepts and releases focused on fun, polish and replay value.</p>
+              <span class="portfolio-path-link">Open Games <i class="bi bi-arrow-right"></i></span>
+            </a>
           </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/css-hexagon-generator-portfolio.png" data-gallery="portfolioGallery"
-                class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/css-hexagon-generator-portfolio.png" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">CSS Hexagon Generator</h2>
-                    <div class="w-more">
-                      Pure CSS Hexagon Generator
-                    </div>
-                  </div>
-                  <div class="col-sm-2 d-none">
-                    <div class="w-like">
-                      <a href="#work"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
+          <div class="col-md-6">
+            <a class="work-box portfolio-path-card" href="websites.html" aria-label="Open Websites portfolio page">
+              <div class="portfolio-path-icon portfolio-path-websites">
+                <i class="bi bi-globe2"></i>
               </div>
-            </div>
+              <h2 class="portfolio-path-title">Websites</h2>
+              <p class="portfolio-path-desc">Personal and client-facing sites, dashboards and web tools collected in one showcase.</p>
+              <span class="portfolio-path-link">Open Websites <i class="bi bi-arrow-right"></i></span>
+            </a>
           </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/simac-portfolio.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/simac-portfolio.png" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">SIMAC</h2>
-                    <div class="w-more">
-                      Short Interval Monitoring and Control
-                    </div>
-                  </div>
-                  <div class="col-sm-2 d-none">
-                    <div class="w-like">
-                      <a href="#work"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
+          <div class="col-md-6">
+            <a class="work-box portfolio-path-card" href="libraries.html" aria-label="Open Libraries portfolio page">
+              <div class="portfolio-path-icon portfolio-path-libraries">
+                <i class="bi bi-collection"></i>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/jojo-monitor.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/jojo-monitor.png" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">JoJo Monitor</h2>
-                    <div class="w-more">
-                      JoJo Tank Level Monitoring (IoT)
-                    </div>
-                  </div>
-                  <div class="col-sm-2 d-none">
-                    <div class="w-like">
-                      <a href="#work"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/my-personal-website.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/my-personal-website.png" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">My Personal Website</h2>
-                    <div class="w-more">
-                      www.ShaunRoselt.com
-                    </div>
-                  </div>
-                  <div class="col-sm-2 d-none">
-                    <div class="w-like">
-                      <a href="#work"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <h2 class="portfolio-path-title">Libraries</h2>
+              <p class="portfolio-path-desc">Frameworks, packages and reusable building blocks for web, Delphi and JavaScript projects.</p>
+              <span class="portfolio-path-link">Open Libraries <i class="bi bi-arrow-right"></i></span>
+            </a>
           </div>
 
         </div>
@@ -693,17 +586,8 @@
   <!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            <p class="copyright">Copyright © <strong>Shaun Roselt</strong></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
+  <site-footer></site-footer>
+  <!-- End Footer -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i

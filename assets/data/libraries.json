@@ -3,6 +3,7 @@
     "id": "roselt-js",
     "name": "Roselt.js",
     "summary": "A vanilla JavaScript framework for building routed web apps with real HTML, persistent shell sections and file-based organisation.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-filetype-js",
@@ -26,7 +27,7 @@
       "kind": "iframe",
       "src": "https://www.roseltjs.org/",
       "title": "Roselt.js preview",
-      "sandbox": "allow-scripts",
+      "sandbox": "allow-scripts allow-same-origin",
       "fallback": {
         "kind": "placeholder",
         "text": "www.roseltjs.org"
@@ -57,6 +58,7 @@
     "id": "tunipas",
     "name": "TUniPas",
     "summary": "A lightweight, opinionated Delphi framework for FireMonkey apps with frame-based routing, runtime language translation and JSON-backed application settings.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-braces",
@@ -96,6 +98,7 @@
     "id": "grafana-js",
     "name": "Grafana.js",
     "summary": "Lightweight JavaScript helpers for embedding Grafana panels and interacting with Grafana dashboards and APIs.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-filetype-js",
