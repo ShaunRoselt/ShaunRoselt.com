@@ -158,6 +158,92 @@ a:hover {
   color: #4e4e4e;
 }
 
+.showcase-controls {
+  width: min(100%, 43rem);
+  margin: 1.5rem auto 1.1rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.22);
+}
+
+.showcase-search-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.showcase-search {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 0.98rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.showcase-search::placeholder {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.showcase-search:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08);
+}
+
+.showcase-filter-bar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0.9rem auto 0;
+  padding: 0.35rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.showcase-filter-button {
+  min-width: 0;
+  padding: 0.72rem 1.05rem;
+  border-radius: 14px;
+  border: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.showcase-filter-button.button-a,
+.showcase-filter-button.button-a:hover,
+.showcase-filter-button.button-a:focus {
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+}
+
+.showcase-filter-button.button-outline-a,
+.showcase-filter-button.button-outline-a:hover,
+.showcase-filter-button.button-outline-a:focus {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.86);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.showcase-filter-button.button-outline-a:hover,
+.showcase-filter-button.button-outline-a:focus {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
 .line-mf {
   width: 40px;
   height: 5px;
@@ -693,13 +779,14 @@ a:hover {
 .showcase-stack {
   display: grid;
   gap: 2rem;
+  overflow-anchor: none;
 }
 
 .showcase-card {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
   min-height: 100%;
-  background: linear-gradient(160deg, #162230 0%, #0f1722 100%);
+  background: var(--site-header-bg);
   border: 1px solid rgba(119, 168, 214, 0.18);
   border-radius: 22px;
   overflow: hidden;
@@ -739,16 +826,14 @@ a:hover {
 
 .showcase-media iframe {
   position: absolute;
-  left: 50%;
-  top: 0;
-  /* logical desktop viewport for iframe content; JS adjusts --iframe-scale */
-  width: var(--iframe-viewport-width, 1200px);
-  height: calc(var(--iframe-viewport-width, 1200px) * 9 / 16);
+  inset: 0;
+  width: 100%;
+  height: 100%;
   border: 0;
   display: block;
   pointer-events: none;
   z-index: 2;
-  background: transparent;
+  background: #fff;
   opacity: 1;
   /* try to suppress any scrollbars rendered by the iframe element */
   overflow: hidden;
@@ -756,8 +841,17 @@ a:hover {
   /* IE/Edge */
   scrollbar-width: none;
   /* Firefox */
-  transform-origin: top center;
-  transform: translateX(-50%) scale(var(--iframe-scale, 1));
+}
+
+.showcase-media iframe[style*="--iframe-scale"] {
+  left: var(--iframe-offset-x, 0px);
+  top: 0;
+  inset: auto;
+  /* logical desktop viewport for iframe content; JS adjusts --iframe-scale */
+  width: var(--iframe-viewport-width, 1200px);
+  height: calc(var(--iframe-viewport-width, 1200px) * 9 / 16);
+  transform-origin: top left;
+  transform: scale(var(--iframe-scale, 1));
   transition: transform 160ms ease;
 }
 
@@ -904,11 +998,6 @@ a:hover {
   font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
-}
-
-.showcase-body.showcase-body-compact .showcase-links .button {
-  width: 2.85rem;
-  height: 2.85rem;
 }
 
 .showcase-links .button i {
@@ -1058,6 +1147,20 @@ body.showcase-modal-open {
 @media (max-width: 991px) {
   .showcase-card {
     grid-template-columns: 1fr;
+  }
+
+  .showcase-controls {
+    padding: 0.8rem;
+  }
+
+  .showcase-filter-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .showcase-filter-button {
+    width: 100%;
   }
 
   .showcase-media {
@@ -1536,7 +1639,7 @@ footer {
   text-align: center;
   color: #fff;
   padding: 25px 0;
-  background: #0062d3;
+  background: var(--site-header-bg);
 }
 
 footer .copyright {

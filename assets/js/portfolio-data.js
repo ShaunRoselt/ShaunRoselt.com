@@ -21,6 +21,29 @@
   };
 
   const cache = new Map();
+  let lastUserScrollAt = 0;
+  let scrollRestoreToken = 0;
+  let lastUserIntentAt = 0;
+
+  window.addEventListener("scroll", () => {
+    lastUserScrollAt = Date.now();
+  }, { passive: true });
+
+  const recordUserScrollIntent = () => {
+    lastUserIntentAt = Date.now();
+    scrollRestoreToken += 1;
+    delete window.__portfolioScrollTarget;
+  };
+
+  ["wheel", "touchmove"].forEach((eventName) => {
+    window.addEventListener(eventName, recordUserScrollIntent, { passive: true });
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", " "].includes(event.key)) {
+      recordUserScrollIntent();
+    }
+  });
 
   const escapeHtml = (value) => String(value ?? "")
     .replace(/&/g, "&amp;")
@@ -35,146 +58,146 @@
     return [];
   };
 
-  const renderAttributes = (attributes) => Object.entries(attributes)
-    .filter(([, value]) => value !== undefined && value !== null && value !== "")
-    .map(([name, value]) => ` ${name}="${escapeHtml(value)}"`)
-    .join("");
+  const FILTER_VALUES = new Set(["all", "personal", "client"]);
 
-  const renderIcon = (icon) => icon
-    ? `<i class="bi ${escapeHtml(icon)}" aria-hidden="true"></i>`
-    : "";
-
-  const renderTags = (tags = []) => tags.map((tag) => `
-                <span class="showcase-tag">${renderIcon(tag.icon)} ${escapeHtml(tag.label)}</span>`).join("");
-
-  const renderFeatures = (features = []) => features.map((feature) => `
-                <li>${escapeHtml(feature)}</li>`).join("");
-
-  const renderLink = (link) => {
-    const classes = ["button", link.style === "primary" ? "button-a" : "button-outline-a"];
-
-    if (link.comingSoon) {
-      classes.push("button-coming-soon");
-      return `
-                <button class="${classes.join(" ")}" type="button"${renderAttributes({
-        "data-coming-soon-platform": link.platform || link.title,
-        title: link.title,
-        "aria-label": link.ariaLabel || link.title
-      })}>
-                  ${renderIcon(link.icon)}
-                </button>`;
+  const renderCard = (item) => {
+    if (window.IframeCardComponent && typeof window.IframeCardComponent.createElementMarkup === "function") {
+      return window.IframeCardComponent.createElementMarkup(item);
     }
 
-    if (link.lightbox) {
-      classes.push("portfolio-lightbox");
-    }
-
-    return `
-                <a class="${classes.join(" ")}"${renderAttributes({
-      href: link.href,
-      target: link.target,
-      rel: link.rel,
-      title: link.title,
-      "aria-label": link.ariaLabel || link.title,
-      "data-gallery": link.gallery
-    })}>
-                  ${renderIcon(link.icon)}
-                </a>`;
+    return `<iframe-card data-item="${escapeHtml(encodeURIComponent(JSON.stringify(item ?? {})))}"></iframe-card>`;
   };
 
-  const renderLinks = (links = []) => links.map(renderLink).join("");
+  const renderMessageCard = (title, summary) => renderCard({
+    name: title,
+    summary,
+    tags: [],
+    features: [],
+    links: []
+  });
 
-  const renderFallback = (fallback) => {
-    if (!fallback) return "";
+  const getFilterGroup = (category) => document.querySelector(`[data-portfolio-filter-group="${category}"]`);
 
-    if (fallback.kind === "image") {
-      return `
-              <img${renderAttributes({
-        src: fallback.src,
-        alt: fallback.alt,
-        class: `showcase-fallback${fallback.className ? ` ${fallback.className}` : ""}`,
-        style: fallback.style
-      })}>`;
-    }
+  const getSearchGroup = (category) => document.querySelector(`[data-portfolio-search-group="${category}"]`);
 
-    return `
-              <div class="showcase-fallback showcase-placeholder">${escapeHtml(fallback.text)}</div>`;
+  const getActiveSearch = (category) => {
+    const group = getSearchGroup(category);
+    const input = group ? group.querySelector('[data-portfolio-search-input]') : null;
+    return (input?.value || "").trim().toLowerCase();
   };
 
-  const renderMedia = (media) => {
-    if (!media) {
-      return '<div class="showcase-media"></div>';
-    }
+  const scheduleScrollRestore = (top) => {
+    if (!Number.isFinite(top)) return;
 
-    if (media.kind === "iframe") {
-      let sandboxValue = media.sandbox;
-      if (typeof sandboxValue === "string" && sandboxValue.includes("allow-scripts") && !sandboxValue.includes("allow-same-origin")) {
-        sandboxValue = `${sandboxValue} allow-same-origin`.trim();
+    const token = ++scrollRestoreToken;
+    const guardUntil = Date.now() + 5200;
+    window.__portfolioScrollTarget = top;
+
+    const restoreIfNeeded = () => {
+      if (token !== scrollRestoreToken) return;
+      if (Math.abs(window.scrollY - top) < 4) return;
+      if (Date.now() - lastUserIntentAt < 350) return;
+      window.scrollTo({ top, left: 0, behavior: "auto" });
+    };
+
+    const restoreUntilStable = () => {
+      if (token !== scrollRestoreToken) return;
+      restoreIfNeeded();
+      if (Date.now() < guardUntil) {
+        window.requestAnimationFrame(restoreUntilStable);
       }
+    };
 
-      return `
-            <div class="showcase-media">
-              <iframe${renderAttributes({
-        src: media.src,
-        title: media.title,
-        sandbox: sandboxValue,
-        scrolling: media.scrolling || "no",
-        loading: media.loading || "lazy",
-        "aria-hidden": media.ariaHidden || "true",
-        style: media.style
-      })}></iframe>${renderFallback(media.fallback)}
-            </div>`;
-    }
-
-    if (media.kind === "image-link") {
-      const classes = ["showcase-media"];
-      if (media.lightbox) {
-        classes.push("portfolio-lightbox");
+    window.requestAnimationFrame(restoreUntilStable);
+    window.setTimeout(restoreIfNeeded, 250);
+    window.setTimeout(restoreIfNeeded, 700);
+    window.setTimeout(restoreIfNeeded, 1500);
+    window.setTimeout(restoreIfNeeded, 3200);
+    window.setTimeout(restoreIfNeeded, 5200);
+    window.setTimeout(() => {
+      if (token === scrollRestoreToken && window.__portfolioScrollTarget === top) {
+        delete window.__portfolioScrollTarget;
       }
-
-      return `
-            <a class="${classes.join(" ")}"${renderAttributes({
-        href: media.href,
-        target: media.target,
-        rel: media.rel,
-        "data-gallery": media.gallery
-      })}>
-              <img${renderAttributes({
-        src: media.src,
-        alt: media.alt
-      })}>
-            </a>`;
-    }
-
-    if (media.kind === "image") {
-      return `
-            <div class="showcase-media">
-              <img${renderAttributes({
-        src: media.src,
-        alt: media.alt
-      })}>
-            </div>`;
-    }
-
-    return `
-            <div class="showcase-media">
-              <div class="showcase-fallback showcase-placeholder">${escapeHtml(media.text || "")}</div>
-            </div>`;
+    }, 6200);
   };
 
-  const renderCard = (item) => `
-          <article class="showcase-card" id="${escapeHtml(item.id)}">
-${renderMedia(item.media)}
-            <div class="showcase-body">
-              <div>
-                <h2 class="showcase-title">${escapeHtml(item.name)}</h2>
-                <p class="showcase-summary">${escapeHtml(item.summary)}</p>
-              </div>
-              <div class="showcase-tags">${renderTags(item.tags)}</div>
-              <ul class="showcase-features">${renderFeatures(item.features)}</ul>
-              <div class="showcase-links">${renderLinks(item.links)}</div>
-            </div>
-          </article>`;
+  const normalizeFilterValue = (value) => FILTER_VALUES.has(value) ? value : "all";
+
+  const getActiveFilter = (category) => {
+    const filterGroup = getFilterGroup(category);
+    return normalizeFilterValue(filterGroup?.dataset.portfolioFilterValue || "all");
+  };
+
+  const updateFilterButtons = (category) => {
+    const filterGroup = getFilterGroup(category);
+    if (!filterGroup) return;
+
+    const activeFilter = getActiveFilter(category);
+    filterGroup.querySelectorAll("[data-portfolio-filter]").forEach((button) => {
+      const isActive = normalizeFilterValue(button.dataset.portfolioFilter) === activeFilter;
+      button.classList.toggle("button-a", isActive);
+      button.classList.toggle("button-outline-a", !isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  };
+
+  const filterItems = (items, category) => {
+    const activeFilter = getActiveFilter(category);
+    let filtered = items;
+    if (activeFilter !== "all") {
+      filtered = filtered.filter((item) => item.ownership === activeFilter);
+    }
+
+    const q = getActiveSearch(category);
+    if (!q) return filtered;
+
+    return filtered.filter((item) => {
+      if ((item.name || "").toLowerCase().includes(q)) return true;
+      if ((item.summary || "").toLowerCase().includes(q)) return true;
+      if (Array.isArray(item.tags) && item.tags.some(t => (t.label || "").toLowerCase().includes(q))) return true;
+      return false;
+    });
+  };
+
+  const initPortfolioFilters = () => {
+    document.querySelectorAll("[data-portfolio-filter-group]").forEach((filterGroup) => {
+      if (filterGroup.dataset.portfolioFilterMounted === "true") return;
+
+      filterGroup.dataset.portfolioFilterMounted = "true";
+      filterGroup.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-portfolio-filter]");
+        if (!button || !filterGroup.contains(button)) return;
+
+        const nextFilter = normalizeFilterValue(button.dataset.portfolioFilter);
+        if (filterGroup.dataset.portfolioFilterValue === nextFilter) return;
+
+        filterGroup.dataset.portfolioFilterValue = nextFilter;
+        renderPortfolioPages({ preserveScrollTop: window.scrollY });
+      });
+    });
+  };
+
+  const initPortfolioSearch = () => {
+    document.querySelectorAll('[data-portfolio-search-group]').forEach((group) => {
+      if (group.dataset.portfolioSearchMounted === "true") return;
+      group.dataset.portfolioSearchMounted = "true";
+      const input = group.querySelector('[data-portfolio-search-input]');
+      if (!input) return;
+      let timeout = null;
+      input.addEventListener('input', () => {
+        if (timeout) clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          renderPortfolioPages({ preserveScrollTop: window.scrollY });
+        }, 220);
+      });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          input.value = '';
+          renderPortfolioPages({ preserveScrollTop: window.scrollY });
+        }
+      });
+    });
+  };
 
   const getDataUrl = (category) => `assets/data/${category}.json`;
 
@@ -201,9 +224,13 @@ ${renderMedia(item.media)}
   const buildPortfolioMenuMarkup = () => Object.values(PORTFOLIO_PAGES).map((page) => `
             <li><a href="${escapeHtml(page.href)}">${escapeHtml(page.label)}</a></li>`).join("");
 
-  const renderPortfolioPages = async () => {
+  const renderPortfolioPages = async ({ preserveScrollTop } = {}) => {
     const containers = [...document.querySelectorAll("[data-portfolio-category]")];
     if (!containers.length) return;
+
+    if (Number.isFinite(preserveScrollTop)) {
+      window.__portfolioScrollTarget = preserveScrollTop;
+    }
 
     await Promise.all(containers.map(async (container) => {
       const category = container.dataset.portfolioCategory;
@@ -211,24 +238,25 @@ ${renderMedia(item.media)}
 
       try {
         const items = await loadCategory(category);
-        container.innerHTML = items.map(renderCard).join("\n");
+        const filtered = filterItems(items, category);
+        if (!filtered || filtered.length === 0) {
+          container.innerHTML = renderMessageCard("No matching websites", "Try a different search term or clear filters.");
+        } else {
+          container.innerHTML = filtered.map(renderCard).join("\n");
+        }
       } catch (error) {
         console.error(`Failed to render ${category} page:`, error);
-        container.innerHTML = `
-          <article class="showcase-card">
-            <div class="showcase-body">
-              <div>
-                <h2 class="showcase-title">Unable to load portfolio items</h2>
-                <p class="showcase-summary">Please try refreshing the page.</p>
-              </div>
-            </div>
-          </article>`;
+        container.innerHTML = renderMessageCard("Unable to load portfolio items", "Please try refreshing the page.");
       }
     }));
+
+    containers.forEach((container) => updateFilterButtons(container.dataset.portfolioCategory));
 
     if (window.SiteShowcase && typeof window.SiteShowcase.refresh === "function") {
       window.SiteShowcase.refresh();
     }
+
+    scheduleScrollRestore(preserveScrollTop);
 
     window.dispatchEvent(new Event("portfolio:rendered"));
   };
@@ -238,12 +266,20 @@ ${renderMedia(item.media)}
     loadCategory,
     loadCategories,
     buildPortfolioMenuMarkup,
+    initPortfolioFilters,
+    initPortfolioSearch,
     renderPortfolioPages
   };
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", renderPortfolioPages, { once: true });
+    document.addEventListener("DOMContentLoaded", () => {
+      initPortfolioFilters();
+      initPortfolioSearch();
+      renderPortfolioPages();
+    }, { once: true });
   } else {
+    initPortfolioFilters();
+    initPortfolioSearch();
     renderPortfolioPages();
   }
 })();

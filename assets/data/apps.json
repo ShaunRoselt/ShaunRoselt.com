@@ -3,6 +3,7 @@
     "id": "roselt-calculator",
     "name": "Roselt Calculator",
     "summary": "An all-in-one calculator for everyday math, technical work and quick problem solving, with a clean interface that scales from simple arithmetic to programmer and graphing workflows.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-calculator",
@@ -100,6 +101,7 @@
     "id": "qr-code-generator",
     "name": "QR Code Generator",
     "summary": "Quick QR code generator with URL mode, customisation and download options.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-qr-code",
@@ -150,6 +152,7 @@
     "id": "roselt-developer-tools",
     "name": "Roselt Developer Tools",
     "summary": "A collection of focused utilities built to speed up repetitive developer tasks and keep the small-but-important workflow details out of the way.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-tools",
@@ -241,6 +244,7 @@
     "id": "delphi-turtle",
     "name": "Delphi Turtle",
     "summary": "A beginner-friendly learning environment for Delphi programming that pairs an interactive code editor with turtle graphics so students can see programming concepts take shape immediately.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-mortarboard",
@@ -333,6 +337,7 @@
     "id": "programming-helper",
     "name": "Programming Helper",
     "summary": "A compact helper surface for quick references, code-facing notes and everyday development lookups when you want answers fast instead of digging through tabs.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-journal-code",

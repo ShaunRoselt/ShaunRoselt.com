@@ -27,8 +27,10 @@
 
 <body>
   <div data-site-header></div>
+  <script src="assets/components/iframe-card/iframe-card.js"></script>
   <script src="assets/js/portfolio-data.js"></script>
   <script src="assets/components/site-header/site-header.js"></script>
+  <script src="assets/components/site-footer/site-footer.js"></script>
 
   <main id="main">
 
@@ -44,6 +46,22 @@
               <p class="subtitle-a">
                 Store-style listings with screenshots, quick summaries and direct links
               </p>
+              <div class="showcase-controls">
+                <div class="showcase-search-wrap" data-portfolio-search-group="apps">
+                  <input type="search" class="showcase-search" data-portfolio-search-input
+                    placeholder="Search apps, tools or topics" aria-label="Search apps" autocomplete="off"
+                    spellcheck="false">
+                </div>
+                <div class="showcase-filter-bar" data-portfolio-filter-group="apps" data-portfolio-filter-value="all"
+                  role="group" aria-label="Filter apps by ownership">
+                  <button type="button" class="button button-a button-rouded showcase-filter-button"
+                    data-portfolio-filter="all" aria-pressed="true">All Apps</button>
+                  <button type="button" class="button button-outline-a button-rouded showcase-filter-button"
+                    data-portfolio-filter="personal" aria-pressed="false">Made for Myself</button>
+                  <button type="button" class="button button-outline-a button-rouded showcase-filter-button"
+                    data-portfolio-filter="client" aria-pressed="false">Made for Others</button>
+                </div>
+              </div>
               <div class="line-mf"></div>
             </div>
           </div>
@@ -57,17 +75,8 @@
   <!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            <p class="copyright">Copyright © <strong>Shaun Roselt</strong></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
+  <div data-site-footer></div>
+  <!-- End Footer -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -81,6 +90,7 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@3.0.0/dist/typed.umd.js"></script>
 
   <!-- Template Main JS File -->
+  <script src="assets/js/footer.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>

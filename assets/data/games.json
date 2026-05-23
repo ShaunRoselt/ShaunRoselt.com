@@ -3,6 +3,7 @@
     "id": "tic-tux-toe",
     "name": "Tic Tux Toe",
     "summary": "A Linux-flavoured twist on classic Tic Tac Toe — Tux-themed skins, adaptive AI and local multiplayer.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-controller",

@@ -3,6 +3,7 @@
     "id": "css-hexagon-generator",
     "name": "CSS Hexagon Generator",
     "summary": "A small tool for generating pure-CSS hexagon shapes.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-code-slash",
@@ -53,6 +54,7 @@
     "id": "programming-helper",
     "name": "Programming Helper",
     "summary": "Tutorials, references and small web tools for developers.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-journal-code",
@@ -97,6 +99,7 @@
     "id": "roselt-calculator-web",
     "name": "Roselt Calculator",
     "summary": "The browser version of Roselt Calculator — standard, scientific, programmer and graphing workflows in one place.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-calculator",
@@ -147,6 +150,7 @@
     "id": "griekwastad",
     "name": "Griekwastad",
     "summary": "Local community portal and resources for Griekwastad.",
+    "ownership": "client",
     "tags": [
       {
         "icon": "bi-globe2",
@@ -182,6 +186,7 @@
     "id": "academy-shaunroselt",
     "name": "Shaun Roselt Dev Academy",
     "summary": "Online learning resources and tutorials from Shaun Roselt.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-mortarboard",
@@ -217,6 +222,7 @@
     "id": "my-personal-website",
     "name": "My Personal Website",
     "summary": "The site you're viewing — built with plain HTML, CSS and JavaScript.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-house",
@@ -265,6 +271,7 @@
     "id": "qr-code-generator-web",
     "name": "QR Code Generator",
     "summary": "Create and customise QR codes online, with download and sharing options.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-qr-code",
@@ -305,6 +312,7 @@
     "id": "roseltjs",
     "name": "Roselt.js",
     "summary": "A lightweight JavaScript library for DOM utilities and UI helpers.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-file-code",
@@ -354,6 +362,7 @@
     "id": "delphipoems",
     "name": "Delphi Programming Poems",
     "summary": "Programming-themed poems and reflections focusing on Delphi.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-journal-text",
@@ -394,6 +403,7 @@
     "id": "halo-tracker",
     "name": "Halo Achievement Tracker",
     "summary": "Community site tracking Halo game achievements and statistics.",
+    "ownership": "personal",
     "tags": [
       {
         "icon": "bi-trophy",
