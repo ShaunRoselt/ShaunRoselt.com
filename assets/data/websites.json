@@ -98,7 +98,7 @@
   {
     "id": "roselt-calculator-web",
     "name": "Roselt Calculator",
-    "summary": "The browser version of Roselt Calculator — standard, scientific, programmer and graphing workflows in one place.",
+    "summary": "The browser version of Roselt Calculator: standard, scientific, programmer and graphing workflows in one place.",
     "ownership": "personal",
     "tags": [
       {
@@ -221,7 +221,7 @@
   {
     "id": "my-personal-website",
     "name": "My Personal Website",
-    "summary": "The site you're viewing — built with plain HTML, CSS and JavaScript.",
+    "summary": "The site you're viewing, built with plain HTML, CSS and JavaScript.",
     "ownership": "personal",
     "tags": [
       {

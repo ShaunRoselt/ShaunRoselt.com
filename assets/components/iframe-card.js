@@ -26,7 +26,7 @@
     const renderLink = (link) => {
         const classes = ["button", link.style === "primary" ? "button-a" : "button-outline-a"];
 
-        if (link.comingSoon) {
+        if (link.comingSoon || !link.href) {
             classes.push("button-coming-soon");
             return `
                 <button class="${classes.join(" ")}" type="button"${renderAttributes({
@@ -143,7 +143,7 @@
                     document.body.innerHTML = '<div class="shell"><div class="title">Preview unavailable</div><div class="subtitle">' + ${JSON.stringify(media.title || targetUrl)} + '</div></div>';
                 }
             })();
-        </script>
+        <\/script>
     </body>
 </html>`;
     };
@@ -154,8 +154,6 @@
             return sandboxValue;
         }
 
-        // Keep sandbox for all iframes, including cross-origin.
-        // Stripping sandbox lets embedded scripts navigate window.top (iframe busting).
         if (sandboxValue.includes("allow-scripts") && !sandboxValue.includes("allow-same-origin")) {
             return `${sandboxValue} allow-same-origin`.trim();
         }
@@ -183,9 +181,6 @@
 
             if (useSrcdocProxy) {
                 iframeAttributes.srcdoc = buildSrcdocProxyMarkup(media);
-                // The proxy injects arbitrary remote HTML; always sandbox it so the
-                // injected scripts cannot navigate window.top (allow-top-navigation
-                // is intentionally absent).
                 iframeAttributes.sandbox = "allow-scripts allow-same-origin";
             } else {
                 iframeAttributes.src = media.src;
@@ -282,6 +277,10 @@ ${renderMedia(item.media)}
         }
 
         connectedCallback() {
+            if (!this.style.display) {
+                this.style.display = "block";
+            }
+
             this.render();
         }
 

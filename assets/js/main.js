@@ -114,101 +114,6 @@
   try { initPortfolioLightbox(); } catch (e) { /* ignore */ }
 
   /**
-   * Coming soon buttons
-   */
-  let lastComingSoonTrigger = null;
-
-  const ensureComingSoonModal = () => {
-    let modalEl = select('#comingSoonModal');
-    if (modalEl) return modalEl;
-
-    modalEl = document.createElement('div');
-    modalEl.className = 'showcase-coming-soon-modal';
-    modalEl.id = 'comingSoonModal';
-    modalEl.hidden = true;
-    modalEl.setAttribute('role', 'dialog');
-    modalEl.setAttribute('aria-modal', 'true');
-    modalEl.setAttribute('aria-labelledby', 'comingSoonModalTitle');
-    modalEl.setAttribute('aria-describedby', 'comingSoonModalDescription');
-    modalEl.innerHTML = `
-      <div class="showcase-coming-soon-dialog" role="document">
-        <div class="showcase-coming-soon-header">
-          <div>
-            <span class="showcase-coming-soon-kicker"><i class="bi bi-stars" aria-hidden="true"></i> Platform update</span>
-            <h2 class="showcase-coming-soon-title" id="comingSoonModalTitle">Store support is on the way</h2>
-          </div>
-          <button type="button" class="showcase-coming-soon-close" data-coming-soon-close aria-label="Close popup">
-            <i class="bi bi-x-lg" aria-hidden="true"></i>
-          </button>
-        </div>
-        <div class="showcase-coming-soon-body">
-          <p id="comingSoonModalDescription">This storefront is planned, but it is not live yet.</p>
-          <div class="showcase-coming-soon-platform">
-            <i class="bi bi-shop" aria-hidden="true"></i>
-            <span id="comingSoonPlatformName"></span>
-          </div>
-        </div>
-        <div class="showcase-coming-soon-actions">
-          <button type="button" class="button button-a" data-coming-soon-close>Close</button>
-        </div>
-      </div>
-    `;
-
-    modalEl.addEventListener('click', (event) => {
-      if (event.target === modalEl || event.target.closest('[data-coming-soon-close]')) {
-        hideComingSoonModal();
-      }
-    });
-
-    document.body.appendChild(modalEl);
-    return modalEl;
-  };
-
-  const hideComingSoonModal = () => {
-    const modalEl = select('#comingSoonModal');
-    if (!modalEl || modalEl.hidden) return;
-
-    modalEl.hidden = true;
-    document.body.classList.remove('showcase-modal-open');
-
-    if (lastComingSoonTrigger && typeof lastComingSoonTrigger.focus === 'function') {
-      lastComingSoonTrigger.focus();
-    }
-  };
-
-  const showComingSoonModal = (platform, trigger) => {
-    const modalEl = ensureComingSoonModal();
-    const platformEl = modalEl.querySelector('#comingSoonPlatformName');
-    const descriptionEl = modalEl.querySelector('#comingSoonModalDescription');
-    if (platformEl) {
-      platformEl.textContent = platform;
-    }
-    if (descriptionEl) {
-      descriptionEl.textContent = `${platform} support is coming soon. For now, the app is available on the platforms that are already linked here.`;
-    }
-
-    lastComingSoonTrigger = trigger || document.activeElement;
-    modalEl.hidden = false;
-    document.body.classList.add('showcase-modal-open');
-
-    const closeButton = modalEl.querySelector('[data-coming-soon-close]');
-    if (closeButton) {
-      closeButton.focus();
-    }
-  };
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      hideComingSoonModal();
-    }
-  });
-
-  on('click', '.button-coming-soon', function (event) {
-    event.preventDefault();
-    showComingSoonModal(this.getAttribute('data-coming-soon-platform') || 'This platform', this);
-  }, true);
-
-  /**
    * Compact showcase cards to preserve media height
    */
   const syncShowcaseCardLayout = () => {
@@ -389,7 +294,7 @@
           frameDoc.documentElement.scrollTop = 0;
           if (frameDoc.body) frameDoc.body.scrollTop = 0;
         } catch (e) {
-          // cross-origin or sandboxed without same-origin access — skip
+          // cross-origin or sandboxed without same-origin access; skip
         }
       };
 
@@ -459,7 +364,7 @@
           handleLoad();
         }
       } catch (e) {
-        // cross-origin access will throw — ignore and continue to attach listener
+        // cross-origin access will throw, so ignore and continue to attach listener
       }
     });
 
