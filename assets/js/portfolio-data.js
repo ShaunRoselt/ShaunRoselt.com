@@ -17,6 +17,15 @@
     libraries: {
       label: "Libraries",
       href: "libraries.html"
+    },
+    videos: {
+      label: "Videos",
+      href: "videos.html"
+    }
+    ,
+    books: {
+      label: "Books",
+      href: "books.html"
     }
   };
 
@@ -121,11 +130,19 @@
     }, 6200);
   };
 
-  const normalizeFilterValue = (value) => FILTER_VALUES.has(value) ? value : "all";
+  const normalizeFilterValue = (value, filterGroup) => {
+    const v = String(value ?? "all");
+    if (filterGroup && filterGroup.dataset && filterGroup.dataset.portfolioFilterMode === "series") {
+      return v || "all";
+    }
+
+    return FILTER_VALUES.has(v) ? v : "all";
+  };
 
   const getActiveFilter = (category) => {
     const filterGroup = getFilterGroup(category);
-    return normalizeFilterValue(filterGroup?.dataset.portfolioFilterValue || "all");
+    const raw = filterGroup?.dataset.portfolioFilterValue || "all";
+    return normalizeFilterValue(raw, filterGroup);
   };
 
   const updateFilterButtons = (category) => {
@@ -134,7 +151,8 @@
 
     const activeFilter = getActiveFilter(category);
     filterGroup.querySelectorAll("[data-portfolio-filter]").forEach((button) => {
-      const isActive = normalizeFilterValue(button.dataset.portfolioFilter) === activeFilter;
+      const btnValue = button.dataset.portfolioFilter || "all";
+      const isActive = btnValue === activeFilter;
       button.classList.toggle("button-a", isActive);
       button.classList.toggle("button-outline-a", !isActive);
       button.setAttribute("aria-pressed", String(isActive));
@@ -142,10 +160,25 @@
   };
 
   const filterItems = (items, category) => {
+    const filterGroup = getFilterGroup(category);
     const activeFilter = getActiveFilter(category);
     let filtered = items;
-    if (activeFilter !== "all") {
-      filtered = filtered.filter((item) => item.ownership === activeFilter);
+
+    if (filterGroup && filterGroup.dataset && filterGroup.dataset.portfolioFilterMode === "series") {
+      if (activeFilter !== "all") {
+        if (activeFilter === "other") {
+          filtered = filtered.filter((item) => !item.series);
+        } else {
+          filtered = filtered.filter((item) => {
+            if (Array.isArray(item.series)) return item.series.includes(activeFilter);
+            return item.series === activeFilter;
+          });
+        }
+      }
+    } else {
+      if (activeFilter !== "all") {
+        filtered = filtered.filter((item) => item.ownership === activeFilter);
+      }
     }
 
     const q = getActiveSearch(category);
@@ -168,7 +201,7 @@
         const button = event.target.closest("[data-portfolio-filter]");
         if (!button || !filterGroup.contains(button)) return;
 
-        const nextFilter = normalizeFilterValue(button.dataset.portfolioFilter);
+        const nextFilter = normalizeFilterValue(button.dataset.portfolioFilter, filterGroup);
         if (filterGroup.dataset.portfolioFilterValue === nextFilter) return;
 
         filterGroup.dataset.portfolioFilterValue = nextFilter;
@@ -240,13 +273,15 @@
         const items = await loadCategory(category);
         const filtered = filterItems(items, category);
         if (!filtered || filtered.length === 0) {
-          container.innerHTML = renderMessageCard("No matching websites", "Try a different search term or clear filters.");
+          const label = (PORTFOLIO_PAGES[category] && PORTFOLIO_PAGES[category].label) ? PORTFOLIO_PAGES[category].label.toLowerCase() : category;
+          container.innerHTML = renderMessageCard(`No matching ${label}`, "Try a different search term or clear filters.");
         } else {
           container.innerHTML = filtered.map(renderCard).join("\n");
         }
       } catch (error) {
         console.error(`Failed to render ${category} page:`, error);
-        container.innerHTML = renderMessageCard("Unable to load portfolio items", "Please try refreshing the page.");
+        const label = (PORTFOLIO_PAGES[category] && PORTFOLIO_PAGES[category].label) ? PORTFOLIO_PAGES[category].label.toLowerCase() : "portfolio items";
+        container.innerHTML = renderMessageCard(`Unable to load ${label}`, "Please try refreshing the page.");
       }
     }));
 

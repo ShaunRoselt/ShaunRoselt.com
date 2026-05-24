@@ -193,21 +193,6 @@
   const WEBSITE_IFRAME_ZOOM = 0.9;
   let iframeScaleInitialized = false;
   let iframeScaleRaf = null;
-  let lastShowcaseScrollIntentAt = 0;
-
-  ["wheel", "touchmove"].forEach(eventName => {
-    window.addEventListener(eventName, () => {
-      lastShowcaseScrollIntentAt = Date.now();
-      delete window.__portfolioScrollTarget;
-    }, { passive: true });
-  });
-
-  window.addEventListener('keydown', event => {
-    if (["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", " "].includes(event.key)) {
-      lastShowcaseScrollIntentAt = Date.now();
-      delete window.__portfolioScrollTarget;
-    }
-  });
 
   const getShowcaseIframeViewportWidth = (iframe) => {
     const category = iframe.closest('[data-portfolio-category]')?.dataset.portfolioCategory;
@@ -215,11 +200,19 @@
     return Math.round(DESKTOP_IFRAME_WIDTH / zoom);
   };
 
+  const isInteractiveShowcaseIframe = (iframe) => iframe.dataset.interactive === 'true';
+
   const updateShowcaseIframeScales = () => {
     const medias = select('.showcase-media', true) || [];
     medias.forEach(media => {
       const iframe = media.querySelector('iframe');
       if (!iframe) return;
+      if (isInteractiveShowcaseIframe(iframe)) {
+        iframe.style.removeProperty('--iframe-scale');
+        iframe.style.removeProperty('--iframe-viewport-width');
+        iframe.style.removeProperty('--iframe-offset-x');
+        return;
+      }
       const iframeViewportWidth = getShowcaseIframeViewportWidth(iframe);
       const iframeViewportHeight = Math.round(iframeViewportWidth * 9 / 16);
       const parentWidth = media.clientWidth || media.offsetWidth || 0;
@@ -249,6 +242,8 @@
 
     const shouldKeepFallbackVisible = (iframe, fallback) => {
       if (window.location.protocol !== 'file:') return false;
+
+      if (iframe.dataset.interactive === 'true') return false;
 
       // Only force screenshot fallbacks on local file previews. Placeholder
       // fallbacks can allow the remote iframe to attempt a real load.
@@ -312,45 +307,11 @@
         }
       };
 
-      const getPageScrollTarget = () => {
-        const portfolioTarget = window.__portfolioScrollTarget;
-        return Number.isFinite(portfolioTarget) ? portfolioTarget : window.scrollY;
-      };
-
-      const restorePageScroll = (top) => {
-        if (!Number.isFinite(top)) return;
-        const guardStartedAt = Date.now();
-        const guardUntil = Date.now() + 4200;
-
-        const correctScroll = () => {
-          if (lastShowcaseScrollIntentAt > guardStartedAt) return;
-
-          const activeElement = document.activeElement;
-          if (activeElement === iframe && typeof activeElement.blur === 'function') {
-            activeElement.blur();
-          }
-
-          if (Math.abs(window.scrollY - top) > 8 && Date.now() - lastShowcaseScrollIntentAt > 350) {
-            window.scrollTo({ top, left: 0, behavior: 'auto' });
-          }
-
-          if (Date.now() < guardUntil) {
-            window.requestAnimationFrame(correctScroll);
-          }
-        };
-
-        window.requestAnimationFrame(correctScroll);
-        window.setTimeout(correctScroll, 180);
-        window.setTimeout(correctScroll, 900);
-      };
-
       const handleLoad = () => {
-        const pageScrollTop = getPageScrollTarget();
         resetIframeScroll();
         if (!shouldKeepFallbackVisible(iframe, fallback)) {
           hideFallback();
         }
-        restorePageScroll(pageScrollTop);
       };
 
       if (iframe.dataset.showcaseIframeInitialized !== 'true') {
@@ -407,7 +368,7 @@
         <div class="swiper-slide">
           <div class="testimonial-box">
             <div class="author-test">
-              ${r.avatar ? `<img src="${r.avatar}" alt="${(r.author ? ('Photo of ' + r.author) : 'Author avatar').replace(/"/g,'&quot;')}" class="rounded-circle b-shadow-a" style="height: 200px; width: 200px;">` : ''}
+              ${r.avatar ? `<img src="${r.avatar}" alt="${(r.author ? ('Photo of ' + r.author) : 'Author avatar').replace(/"/g, '&quot;')}" class="rounded-circle b-shadow-a" style="height: 200px; width: 200px;">` : ''}
               <span class="author">${r.author}</span>
             </div>
             <div class="content-test">

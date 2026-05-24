@@ -134,6 +134,10 @@ a:hover {
   margin-top: 4rem;
 }
 
+#work {
+  padding-bottom: 4rem;
+}
+
 /*--/ Title s /--*/
 .title-s {
   font-weight: 600;
@@ -759,10 +763,66 @@ a:hover {
   flex-shrink: 0;
 }
 
-.portfolio-path-apps     { background: linear-gradient(135deg, #0f4c81, #1b7fc3); }
-.portfolio-path-games    { background: linear-gradient(135deg, #5a2766, #a4396f); }
-.portfolio-path-websites { background: linear-gradient(135deg, #15605e, #1f8f88); }
-.portfolio-path-libraries{ background: linear-gradient(135deg, #3b4d15, #728c1f); }
+.portfolio-path-apps {
+  background: linear-gradient(135deg, #0f4c81, #1b7fc3);
+}
+
+.portfolio-path-games {
+  background: linear-gradient(135deg, #5a2766, #a4396f);
+}
+
+.portfolio-path-websites {
+  background: linear-gradient(135deg, #15605e, #1f8f88);
+}
+
+.portfolio-path-libraries {
+  background: linear-gradient(135deg, #3b4d15, #728c1f);
+}
+
+/* Icons for Videos and Books portfolio cards */
+.portfolio-path-videos {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.portfolio-path-books {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+/* Ensure consistent spacing between portfolio cards (rows and columns).
+   Use CSS Grid inside `.portfolio-mf` so the layout stays two columns at
+   `md` and above while preserving a uniform gap both vertically and
+   horizontally. This avoids interfering with Bootstrap's `.row` negative
+   margins and keeps the cards aligned.
+*/
+#work .row+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  /* equal vertical and horizontal gap */
+  margin-left: 0;
+  /* override Bootstrap negative gutters for this section */
+  margin-right: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  #work .row+.row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#work .row+.row>.col-md-6 {
+  width: auto;
+  /* allow grid to control sizing */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#work .row+.row .work-box {
+  margin-bottom: 0;
+  /* let grid gap control vertical spacing */
+}
 
 .portfolio-path-title {
   font-size: 1.3rem;
@@ -864,8 +924,8 @@ a:hover {
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #0c121b;
+  overflow: hidden;
 }
-
 
 .showcase-media::after {
   content: "";
@@ -882,13 +942,6 @@ a:hover {
   display: block;
 }
 
-/* Non-interactive iframe previews: render live site but disable interaction
-   and provide an image fallback that fades out when the iframe loads. */
-.showcase-media {
-  position: relative;
-  overflow: hidden;
-}
-
 .showcase-media iframe {
   position: absolute;
   inset: 0;
@@ -900,12 +953,18 @@ a:hover {
   z-index: 2;
   background: #fff;
   opacity: 1;
-  /* try to suppress any scrollbars rendered by the iframe element */
   overflow: hidden;
   -ms-overflow-style: none;
-  /* IE/Edge */
   scrollbar-width: none;
-  /* Firefox */
+}
+
+.showcase-media--interactive iframe {
+  pointer-events: auto;
+  background: #000;
+}
+
+.showcase-media--interactive::after {
+  display: none;
 }
 
 .showcase-media iframe[style*="--iframe-scale"] {

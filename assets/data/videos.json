@@ -1,0 +1,1633 @@
+[
+    {
+        "id": "yt-gscn9tdDrHY",
+        "name": "Day 1 — Vibe Coding On Steam Deck",
+        "summary": "Building in public: initial setup, goals and roadmap.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-camera-video",
+                "label": "Vlog"
+            }
+        ],
+        "features": [
+            "Overview",
+            "Roadmap"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/gscn9tdDrHY",
+            "title": "Day 1 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/gscn9tdDrHY/hqdefault.jpg",
+                "alt": "Day 1 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=gscn9tdDrHY",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-5m60Gb45MUA",
+        "name": "Day 2 — Vibe Coding On Steam Deck",
+        "summary": "Calculator project: planning and first implementation steps.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-code",
+                "label": "Project"
+            }
+        ],
+        "features": [
+            "Implementation",
+            "Live demo"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/5m60Gb45MUA",
+            "title": "Day 2 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/5m60Gb45MUA/hqdefault.jpg",
+                "alt": "Day 2 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=5m60Gb45MUA",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-5Np_UTlfp4Q",
+        "name": "Day 3 — Vibe Coding On Steam Deck",
+        "summary": "Linux calculator refinements and store prep.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-terminal",
+                "label": "Linux"
+            }
+        ],
+        "features": [
+            "Refinement",
+            "Packaging"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/5Np_UTlfp4Q",
+            "title": "Day 3 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/5Np_UTlfp4Q/hqdefault.jpg",
+                "alt": "Day 3 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=5Np_UTlfp4Q",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-uzfjaVL8syA",
+        "name": "Day 4 — Vibe Coding On Steam Deck",
+        "summary": "Channel setup, store pages and tooling.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-gear",
+                "label": "Tools"
+            }
+        ],
+        "features": [
+            "Channel assets",
+            "Store prep"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/uzfjaVL8syA",
+            "title": "Day 4 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/uzfjaVL8syA/hqdefault.jpg",
+                "alt": "Day 4 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=uzfjaVL8syA",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-r-hlT6MF9Xw",
+        "name": "Day 5 — Vibe Coding On Steam Deck",
+        "summary": "More calculator work and debugging live.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-wrench",
+                "label": "Debug"
+            }
+        ],
+        "features": [
+            "Debugging",
+            "Live testing"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/r-hlT6MF9Xw",
+            "title": "Day 5 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/r-hlT6MF9Xw/hqdefault.jpg",
+                "alt": "Day 5 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=r-hlT6MF9Xw",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-BodpfZITESE",
+        "name": "Day 6 — Vibe Coding On Steam Deck",
+        "summary": "QR code generator, channel graphics and utilities.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-image",
+                "label": "Assets"
+            }
+        ],
+        "features": [
+            "Generator",
+            "Design"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/BodpfZITESE",
+            "title": "Day 6 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/BodpfZITESE/hqdefault.jpg",
+                "alt": "Day 6 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=BodpfZITESE",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-T5X-d7oYDj0",
+        "name": "Day 7 — Vibe Coding On Steam Deck",
+        "summary": "QR code improvements and Linux tooling.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-qr-code",
+                "label": "QR"
+            }
+        ],
+        "features": [
+            "Generators",
+            "Tools"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/T5X-d7oYDj0",
+            "title": "Day 7 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/T5X-d7oYDj0/hqdefault.jpg",
+                "alt": "Day 7 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=T5X-d7oYDj0",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-wVan-8HNl_k",
+        "name": "Day 8 — Vibe Coding On Steam Deck",
+        "summary": "Routing library work and iframe embeds.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "Routing"
+            }
+        ],
+        "features": [
+            "Routing",
+            "Embeds"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/wVan-8HNl_k",
+            "title": "Day 8 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/wVan-8HNl_k/hqdefault.jpg",
+                "alt": "Day 8 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=wVan-8HNl_k",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-czsRAL92ZZw",
+        "name": "Day 9 — Vibe Coding On Steam Deck",
+        "summary": "More routing and feature polish.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-wrench",
+                "label": "Polish"
+            }
+        ],
+        "features": [
+            "Polish",
+            "Testing"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/czsRAL92ZZw",
+            "title": "Day 9 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/czsRAL92ZZw/hqdefault.jpg",
+                "alt": "Day 9 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=czsRAL92ZZw",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-N91WlaPQZIM",
+        "name": "Day 10 — Vibe Coding On Steam Deck",
+        "summary": "Testing editor integrations and agent tooling.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-terminal",
+                "label": "Editor"
+            }
+        ],
+        "features": [
+            "Integrations",
+            "Agents"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/N91WlaPQZIM",
+            "title": "Day 10 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/N91WlaPQZIM/hqdefault.jpg",
+                "alt": "Day 10 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=N91WlaPQZIM",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-3lIGNJiXpDo",
+        "name": "Day 11 — Vibe Coding On Steam Deck",
+        "summary": "Steam store progress and tool experiments.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-shop",
+                "label": "Store"
+            }
+        ],
+        "features": [
+            "Store",
+            "Experiments"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/3lIGNJiXpDo",
+            "title": "Day 11 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/3lIGNJiXpDo/hqdefault.jpg",
+                "alt": "Day 11 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=3lIGNJiXpDo",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-ymNFYYsJ3SY",
+        "name": "Day 12 — Vibe Coding On Steam Deck",
+        "summary": "More tooling and QR improvements.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-gear",
+                "label": "Tools"
+            }
+        ],
+        "features": [
+            "Tools",
+            "Improvements"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/ymNFYYsJ3SY",
+            "title": "Day 12 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/ymNFYYsJ3SY/hqdefault.jpg",
+                "alt": "Day 12 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=ymNFYYsJ3SY",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-7y4hROgqvFU",
+        "name": "Day 13 — Vibe Coding On Steam Deck",
+        "summary": "Continued polish and new features.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-brush",
+                "label": "Polish"
+            }
+        ],
+        "features": [
+            "Features",
+            "Polish"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/7y4hROgqvFU",
+            "title": "Day 13 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/7y4hROgqvFU/hqdefault.jpg",
+                "alt": "Day 13 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=7y4hROgqvFU",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-YyJsqKWK6I4",
+        "name": "Day 14 — Vibe Coding On Steam Deck",
+        "summary": "Documentation, demos and community notes.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-book",
+                "label": "Docs"
+            }
+        ],
+        "features": [
+            "Docs",
+            "Demos"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/YyJsqKWK6I4",
+            "title": "Day 14 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/YyJsqKWK6I4/hqdefault.jpg",
+                "alt": "Day 14 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=YyJsqKWK6I4",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-b58VQe1qozM",
+        "name": "Day 15 — Vibe Coding On Steam Deck",
+        "summary": "Small utilities and site improvements.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-tools",
+                "label": "Utilities"
+            }
+        ],
+        "features": [
+            "Utilities",
+            "Improvements"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/b58VQe1qozM",
+            "title": "Day 15 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/b58VQe1qozM/hqdefault.jpg",
+                "alt": "Day 15 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=b58VQe1qozM",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-IRVxJtq2fK8",
+        "name": "Day 16 — Vibe Coding On Steam Deck",
+        "summary": "Work on larger features and experiments.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-gear",
+                "label": "Experiments"
+            }
+        ],
+        "features": [
+            "Features",
+            "Experiments"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/IRVxJtq2fK8",
+            "title": "Day 16 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/IRVxJtq2fK8/hqdefault.jpg",
+                "alt": "Day 16 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=IRVxJtq2fK8",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-Li5ToRbfZqI",
+        "name": "Day 17 — Vibe Coding On Steam Deck",
+        "summary": "Refactors and stabilization work.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-sliders",
+                "label": "Refactor"
+            }
+        ],
+        "features": [
+            "Refactor",
+            "Stability"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/Li5ToRbfZqI",
+            "title": "Day 17 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/Li5ToRbfZqI/hqdefault.jpg",
+                "alt": "Day 17 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=Li5ToRbfZqI",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-CoQR39LuQWU",
+        "name": "Day 18 — Vibe Coding On Steam Deck",
+        "summary": "Testing, debugging and performance checks.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-speedometer",
+                "label": "Perf"
+            }
+        ],
+        "features": [
+            "Testing",
+            "Performance"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/CoQR39LuQWU",
+            "title": "Day 18 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/CoQR39LuQWU/hqdefault.jpg",
+                "alt": "Day 18 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=CoQR39LuQWU",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-iW-NaOr-LGE",
+        "name": "Day 19 — Vibe Coding On Steam Deck",
+        "summary": "Exploring tooling, building utilities and sharing progress.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-camera-video",
+                "label": "Vlog"
+            },
+            {
+                "icon": "bi-terminal",
+                "label": "Developer"
+            }
+        ],
+        "features": [
+            "Live debugging",
+            "Implementation notes"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/iW-NaOr-LGE",
+            "title": "Day 19 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/iW-NaOr-LGE/hqdefault.jpg",
+                "alt": "Day 19 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=iW-NaOr-LGE",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-zy2ebe2mg5o",
+        "name": "Day 20 — Vibe Coding On Steam Deck",
+        "summary": "Live-coding and progress updates; website and tools work.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-camera-video",
+                "label": "Vlog"
+            },
+            {
+                "icon": "bi-laptop",
+                "label": "Live coding"
+            }
+        ],
+        "features": [
+            "Live demos",
+            "Website improvements"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/zy2ebe2mg5o",
+            "title": "Day 20 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/zy2ebe2mg5o/hqdefault.jpg",
+                "alt": "Day 20 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=zy2ebe2mg5o",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-qZg9Q5V0VFg",
+        "name": "Day 21 — Vibe Coding On Steam Deck",
+        "summary": "Building focused features: calculators, QR tools and more.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-camera-video",
+                "label": "Vlog"
+            },
+            {
+                "icon": "bi-gear",
+                "label": "Tools"
+            }
+        ],
+        "features": [
+            "Feature development",
+            "Tooling demos"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/qZg9Q5V0VFg",
+            "title": "Day 21 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/qZg9Q5V0VFg/hqdefault.jpg",
+                "alt": "Day 21 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=qZg9Q5V0VFg",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-lvU2IItRO2I",
+        "name": "Day 22 — Vibe Coding On Steam Deck",
+        "summary": "Working on documentation, routing helpers and small features.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-camera-video",
+                "label": "Vlog"
+            },
+            {
+                "icon": "bi-book",
+                "label": "Docs"
+            }
+        ],
+        "features": [
+            "Documentation and helpers",
+            "Small focused improvements"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/lvU2IItRO2I",
+            "title": "Day 22 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/lvU2IItRO2I/hqdefault.jpg",
+                "alt": "Day 22 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=lvU2IItRO2I",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-oeYAwt54-9U",
+        "name": "Day 23 — Vibe Coding On Steam Deck",
+        "summary": "Building utilities, improving the site, and tooling experiments.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-camera-video",
+                "label": "Vlog"
+            },
+            {
+                "icon": "bi-hammer",
+                "label": "Utilities"
+            }
+        ],
+        "features": [
+            "Utilities and tooling",
+            "Demonstrations"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/oeYAwt54-9U",
+            "title": "Day 23 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/oeYAwt54-9U/hqdefault.jpg",
+                "alt": "Day 23 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=oeYAwt54-9U",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-cVP01dnM900",
+        "name": "Day 24 — Vibe Coding On Steam Deck",
+        "summary": "Building site features, routing helpers and small utilities.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-camera-video",
+                "label": "Vlog"
+            },
+            {
+                "icon": "bi-tools",
+                "label": "Tools"
+            }
+        ],
+        "features": [
+            "Short topic-focused sessions",
+            "Includes explanations and demos"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/cVP01dnM900",
+            "title": "Day 24 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/cVP01dnM900/hqdefault.jpg",
+                "alt": "Day 24 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=cVP01dnM900",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-40GzgL5yVt4",
+        "name": "Day 25 — Vibe Coding On Steam Deck",
+        "summary": "Project demos and website polish while coding on Steam Deck.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-camera-video",
+                "label": "Vlog"
+            },
+            {
+                "icon": "bi-code",
+                "label": "Libraries"
+            }
+        ],
+        "features": [
+            "Demos and focused coding tasks",
+            "Progress updates"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/40GzgL5yVt4",
+            "title": "Day 25 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/40GzgL5yVt4/hqdefault.jpg",
+                "alt": "Day 25 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=40GzgL5yVt4",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-Ay8fhe8pk9g",
+        "name": "Day 26 — Vibe Coding On Steam Deck",
+        "summary": "Live-coding session: website improvements, genealogy work and tooling.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-camera-video",
+                "label": "Vlog"
+            },
+            {
+                "icon": "bi-laptop",
+                "label": "Live coding"
+            }
+        ],
+        "features": [
+            "Building features in public",
+            "Tooling and workflow demos"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/Ay8fhe8pk9g",
+            "title": "Day 26 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/Ay8fhe8pk9g/hqdefault.jpg",
+                "alt": "Day 26 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=Ay8fhe8pk9g",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-Aj4CgCw19sM",
+        "name": "HTML5 and CSS3: 1 - Page Structure",
+        "summary": "Build the first HTML skeleton and page structure.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "HTML"
+            }
+        ],
+        "features": [
+            "Document skeleton",
+            "Semantic structure"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/Aj4CgCw19sM",
+            "title": "HTML5 and CSS3: 1 - Page Structure",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/Aj4CgCw19sM/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 1 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=Aj4CgCw19sM",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-eggutEoF35k",
+        "name": "HTML5 and CSS3: 2 - Headings and Paragraphs",
+        "summary": "Add headings and paragraphs to structure text content.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "HTML"
+            }
+        ],
+        "features": [
+            "Text hierarchy",
+            "Paragraph basics"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/eggutEoF35k",
+            "title": "HTML5 and CSS3: 2 - Headings and Paragraphs",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/eggutEoF35k/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 2 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=eggutEoF35k",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-GtjRIqtUEu8",
+        "name": "HTML5 and CSS3: 3 - Bold, Underline, Italic",
+        "summary": "Use inline formatting to emphasize text.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "HTML"
+            }
+        ],
+        "features": [
+            "Inline formatting",
+            "Text emphasis"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/GtjRIqtUEu8",
+            "title": "HTML5 and CSS3: 3 - Bold, Underline, Italic",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/GtjRIqtUEu8/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 3 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=GtjRIqtUEu8",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-pTkaqxzsgRQ",
+        "name": "HTML5 and CSS3: 4 - Lists",
+        "summary": "Organize content with ordered and unordered lists.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "HTML"
+            }
+        ],
+        "features": [
+            "Ordered lists",
+            "Unordered lists"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/pTkaqxzsgRQ",
+            "title": "HTML5 and CSS3: 4 - Lists",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/pTkaqxzsgRQ/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 4 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=pTkaqxzsgRQ",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-zt8-vRlBvlY",
+        "name": "HTML5 and CSS3: 5 - Nested Lists",
+        "summary": "Layer list structures to add more detail.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "HTML"
+            }
+        ],
+        "features": [
+            "Nested structures",
+            "Indented lists"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/zt8-vRlBvlY",
+            "title": "HTML5 and CSS3: 5 - Nested Lists",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/zt8-vRlBvlY/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 5 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=zt8-vRlBvlY",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-X91KWsqrD1k",
+        "name": "HTML5 and CSS3: 6 - Line Breaks and Horizontal Rules",
+        "summary": "Use breaks and separators to control spacing.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "HTML"
+            }
+        ],
+        "features": [
+            "Spacing",
+            "Separators"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/X91KWsqrD1k",
+            "title": "HTML5 and CSS3: 6 - Line Breaks and Horizontal Rules",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/X91KWsqrD1k/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 6 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=X91KWsqrD1k",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-8d28JawhY7c",
+        "name": "HTML5 and CSS3: 7 - Linking to other pages",
+        "summary": "Connect pages with anchors and navigation links.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "HTML"
+            }
+        ],
+        "features": [
+            "Anchors",
+            "Navigation"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/8d28JawhY7c",
+            "title": "HTML5 and CSS3: 7 - Linking to other pages",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/8d28JawhY7c/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 7 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=8d28JawhY7c",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-z0u73pnLmwM",
+        "name": "HTML5 and CSS3: 8 - Images",
+        "summary": "Add images and alt text to your pages.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "Media"
+            }
+        ],
+        "features": [
+            "Image tags",
+            "Alt text"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/z0u73pnLmwM",
+            "title": "HTML5 and CSS3: 8 - Images",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/z0u73pnLmwM/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 8 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=z0u73pnLmwM",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-Dr9YVnbu4gw",
+        "name": "HTML5 and CSS3: 9 - Video tag",
+        "summary": "Embed video content directly in HTML.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "Media"
+            }
+        ],
+        "features": [
+            "Embedded video",
+            "HTML media"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/Dr9YVnbu4gw",
+            "title": "HTML5 and CSS3: 9 - Video tag",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/Dr9YVnbu4gw/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 9 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=Dr9YVnbu4gw",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-RObj5XLkX8k",
+        "name": "HTML5 and CSS3: 10 - Audio tag",
+        "summary": "Embed audio content directly in HTML.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "Media"
+            }
+        ],
+        "features": [
+            "Embedded audio",
+            "HTML media"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/RObj5XLkX8k",
+            "title": "HTML5 and CSS3: 10 - Audio tag",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/RObj5XLkX8k/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 10 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=RObj5XLkX8k",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-UHBNlqqqwUk",
+        "name": "HTML5 and CSS3: 11 - Inline CSS",
+        "summary": "Style elements with inline CSS overrides.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "CSS"
+            }
+        ],
+        "features": [
+            "Inline styling",
+            "Quick overrides"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/UHBNlqqqwUk",
+            "title": "HTML5 and CSS3: 11 - Inline CSS",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/UHBNlqqqwUk/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 11 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=UHBNlqqqwUk",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-BzPSlfJSZqY",
+        "name": "HTML5 and CSS3: 12 - Internal CSS",
+        "summary": "Move styling into a page-level style block.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "CSS"
+            }
+        ],
+        "features": [
+            "Page styles",
+            "Style blocks"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/BzPSlfJSZqY",
+            "title": "HTML5 and CSS3: 12 - Internal CSS",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/BzPSlfJSZqY/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 12 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=BzPSlfJSZqY",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-RdmL-ZNKeQA",
+        "name": "HTML5 and CSS3: 13 - External CSS",
+        "summary": "Separate HTML and CSS into different files.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "CSS"
+            }
+        ],
+        "features": [
+            "Linked stylesheet",
+            "Separation of concerns"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/RdmL-ZNKeQA",
+            "title": "HTML5 and CSS3: 13 - External CSS",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/RdmL-ZNKeQA/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 13 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=RdmL-ZNKeQA",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-r-5tTr2C8T4",
+        "name": "HTML5 and CSS3: 14 - Colors",
+        "summary": "Explore color values and basic styling.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "CSS"
+            }
+        ],
+        "features": [
+            "Color values",
+            "Styling basics"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/r-5tTr2C8T4",
+            "title": "HTML5 and CSS3: 14 - Colors",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/r-5tTr2C8T4/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 14 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=r-5tTr2C8T4",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-oHkV_jzfCY0",
+        "name": "HTML5 and CSS3: 15 - Borders",
+        "summary": "Use borders to frame and separate content.",
+        "ownership": "personal",
+        "series": "web-development",
+        "tags": [
+            {
+                "icon": "bi-code-slash",
+                "label": "CSS"
+            }
+        ],
+        "features": [
+            "Border styles",
+            "Box framing"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/oHkV_jzfCY0",
+            "title": "HTML5 and CSS3: 15 - Borders",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/oHkV_jzfCY0/hqdefault.jpg",
+                "alt": "HTML5 and CSS3 15 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=oHkV_jzfCY0",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    }
+]

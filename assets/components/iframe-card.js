@@ -9,8 +9,10 @@
         .replace(/'/g, "&#39;");
 
     const renderAttributes = (attributes) => Object.entries(attributes)
-        .filter(([, value]) => value !== undefined && value !== null && value !== "")
-        .map(([name, value]) => ` ${name}="${escapeHtml(value)}"`)
+        .filter(([, value]) => value !== undefined && value !== null && value !== "" && value !== false)
+        .map(([name, value]) => value === true
+            ? ` ${name}`
+            : ` ${name}="${escapeHtml(value)}"`)
         .join("");
 
     const renderIcon = (icon) => icon
@@ -150,7 +152,34 @@
 </html>`;
     };
 
-    const getIframeSandboxValue = (media) => {
+    const isYouTubeEmbedUrl = (src) => {
+        if (!src) return false;
+
+        try {
+            const url = new URL(src, window.location.href);
+            return /(^|\.)youtube(?:-nocookie)?\.com$/i.test(url.hostname) && url.pathname.startsWith("/embed/");
+        } catch (error) {
+            return false;
+        }
+    };
+
+    const getEmbedProvider = (media) => {
+        if (typeof media?.provider === "string" && media.provider.trim() !== "") {
+            return media.provider.trim().toLowerCase();
+        }
+
+        return isYouTubeEmbedUrl(media?.src) ? "youtube" : undefined;
+    };
+
+    const getIframeSandboxValue = (media, interactive, isYouTubeEmbed) => {
+        if (media?.sandbox === false) {
+            return undefined;
+        }
+
+        if (interactive && isYouTubeEmbed && media?.sandbox === "allow-scripts allow-same-origin") {
+            return undefined;
+        }
+
         const sandboxValue = media?.sandbox;
         if (typeof sandboxValue !== "string" || sandboxValue.trim() === "") {
             return sandboxValue;
@@ -163,21 +192,50 @@
         return sandboxValue;
     };
 
+    const getIframeOptions = (media) => {
+        const provider = getEmbedProvider(media);
+        const isYouTubeEmbed = provider === "youtube";
+        const isVideoEmbed = media?.kind === "video-embed" || isYouTubeEmbed;
+        const interactive = typeof media?.interactive === "boolean" ? media.interactive : isVideoEmbed;
+
+        return {
+            provider,
+            interactive,
+            isYouTubeEmbed,
+            isVideoEmbed,
+            sandbox: getIframeSandboxValue(media, interactive, isYouTubeEmbed),
+            allow: media?.allow || (isYouTubeEmbed
+                ? "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                : undefined),
+            referrerPolicy: media?.referrerpolicy || media?.referrerPolicy || (isYouTubeEmbed ? "strict-origin-when-cross-origin" : undefined),
+            allowFullscreen: media?.allowfullscreen ?? media?.allowFullscreen ?? isYouTubeEmbed,
+            loading: media?.loading || (interactive ? "lazy" : "eager"),
+            fetchPriority: media?.fetchpriority || media?.fetchPriority || (interactive ? "auto" : "high")
+        };
+    };
+
     const renderMedia = (media) => {
         if (!media) {
             return "";
         }
 
-        if (media.kind === "iframe") {
-            const sandboxValue = getIframeSandboxValue(media);
+        if (media.kind === "iframe" || media.kind === "video-embed") {
+            const iframeOptions = getIframeOptions(media);
+
             const useSrcdocProxy = window.location.protocol === "file:" && (!media.fallback || media.fallback.kind !== "image");
             const iframeAttributes = {
                 title: media.title,
-                sandbox: sandboxValue,
+                sandbox: iframeOptions.sandbox,
                 scrolling: media.scrolling || "no",
-                loading: media.loading || "eager",
-                fetchpriority: media.fetchpriority || "high",
-                tabindex: "-1",
+                loading: iframeOptions.loading,
+                fetchpriority: iframeOptions.fetchPriority,
+                allow: iframeOptions.allow,
+                referrerpolicy: iframeOptions.referrerPolicy,
+                allowfullscreen: iframeOptions.allowFullscreen,
+                frameborder: media.frameborder ?? media.frameBorder ?? "0",
+                tabindex: iframeOptions.interactive ? undefined : "-1",
+                "data-interactive": iframeOptions.interactive ? "true" : undefined,
+                "data-iframe-provider": iframeOptions.provider,
                 style: media.style
             };
 
@@ -189,7 +247,7 @@
             }
 
             return `
-        <div class="showcase-media">
+        <div class="showcase-media${iframeOptions.interactive ? " showcase-media--interactive" : ""}">
           <iframe${renderAttributes(iframeAttributes)}></iframe>${useSrcdocProxy ? "" : renderFallback(media.fallback)}
         </div>`;
         }
@@ -200,19 +258,19 @@
                 classes.push("portfolio-lightbox");
             }
 
-                        const mediaRel = (media.rel !== undefined && media.rel !== null && media.rel !== "") ? media.rel : (media.target === "_blank" ? "noopener noreferrer" : undefined);
+            const mediaRel = (media.rel !== undefined && media.rel !== null && media.rel !== "") ? media.rel : (media.target === "_blank" ? "noopener noreferrer" : undefined);
 
-                        return `
+            return `
                         <a class="${classes.join(" ")}"${renderAttributes({
-                                href: media.href,
-                                target: media.target,
-                                rel: mediaRel,
-                                "data-gallery": media.gallery
-                        })}>
+                href: media.href,
+                target: media.target,
+                rel: mediaRel,
+                "data-gallery": media.gallery
+            })}>
                             <img${renderAttributes({
-                                src: media.src,
-                                alt: media.alt
-                        })}>
+                src: media.src,
+                alt: media.alt
+            })}>
                         </a>`;
         }
 
