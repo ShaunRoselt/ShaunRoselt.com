@@ -4,28 +4,34 @@
   const PORTFOLIO_PAGES = {
     apps: {
       label: "Apps",
-      href: "apps.html"
+      href: "apps.html",
+      icon: "bi bi-window"
     },
     websites: {
       label: "Websites",
-      href: "websites.html"
+      href: "websites.html",
+      icon: "bi bi-globe2"
     },
     games: {
       label: "Games",
-      href: "games.html"
+      href: "games.html",
+      icon: "bi bi-controller"
     },
     libraries: {
       label: "Libraries",
-      href: "libraries.html"
+      href: "libraries.html",
+      icon: "bi bi-collection"
     },
     videos: {
       label: "Videos",
-      href: "videos.html"
+      href: "videos.html",
+      icon: "bi bi-camera-video"
     }
     ,
     books: {
       label: "Books",
-      href: "books.html"
+      href: "books.html",
+      icon: "bi bi-book"
     }
   };
 
@@ -255,7 +261,7 @@
   };
 
   const buildPortfolioMenuMarkup = () => Object.values(PORTFOLIO_PAGES).map((page) => `
-            <li><a href="${escapeHtml(page.href)}">${escapeHtml(page.label)}</a></li>`).join("");
+            <li><a href="${escapeHtml(page.href)}"><i class="${escapeHtml(page.icon || '')}" aria-hidden="true"></i><span>${escapeHtml(page.label)}</span></a></li>`).join("");
 
   const renderPortfolioPages = async ({ preserveScrollTop } = {}) => {
     const containers = [...document.querySelectorAll("[data-portfolio-category]")];

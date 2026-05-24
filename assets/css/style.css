@@ -759,8 +759,15 @@ a:hover {
   border-radius: 0.875rem;
   font-size: 1.35rem;
   color: #fff;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
   flex-shrink: 0;
+}
+
+.portfolio-path-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .portfolio-path-apps {
@@ -828,7 +835,7 @@ a:hover {
   font-size: 1.3rem;
   font-weight: 700;
   color: #1e1e1e;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 .portfolio-path-desc {
