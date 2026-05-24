@@ -42,11 +42,13 @@
             classes.push("portfolio-lightbox");
         }
 
+        const relValue = (link.rel !== undefined && link.rel !== null && link.rel !== "") ? link.rel : (link.target === "_blank" ? "noopener noreferrer" : undefined);
+
         return `
                 <a class="${classes.join(" ")}"${renderAttributes({
             href: link.href,
             target: link.target,
-            rel: link.rel,
+            rel: relValue,
             title: link.title,
             "aria-label": link.ariaLabel || link.title,
             "data-gallery": link.gallery
@@ -198,18 +200,20 @@
                 classes.push("portfolio-lightbox");
             }
 
-            return `
-            <a class="${classes.join(" ")}"${renderAttributes({
-                href: media.href,
-                target: media.target,
-                rel: media.rel,
-                "data-gallery": media.gallery
-            })}>
-              <img${renderAttributes({
-                src: media.src,
-                alt: media.alt
-            })}>
-            </a>`;
+                        const mediaRel = (media.rel !== undefined && media.rel !== null && media.rel !== "") ? media.rel : (media.target === "_blank" ? "noopener noreferrer" : undefined);
+
+                        return `
+                        <a class="${classes.join(" ")}"${renderAttributes({
+                                href: media.href,
+                                target: media.target,
+                                rel: mediaRel,
+                                "data-gallery": media.gallery
+                        })}>
+                            <img${renderAttributes({
+                                src: media.src,
+                                alt: media.alt
+                        })}>
+                        </a>`;
         }
 
         if (media.kind === "image") {

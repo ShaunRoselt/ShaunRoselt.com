@@ -407,7 +407,7 @@
         <div class="swiper-slide">
           <div class="testimonial-box">
             <div class="author-test">
-              ${r.avatar ? `<img src="${r.avatar}" alt="" class="rounded-circle b-shadow-a" style="height: 200px; width: 200px;">` : ''}
+              ${r.avatar ? `<img src="${r.avatar}" alt="${(r.author ? ('Photo of ' + r.author) : 'Author avatar').replace(/"/g,'&quot;')}" class="rounded-circle b-shadow-a" style="height: 200px; width: 200px;">` : ''}
               <span class="author">${r.author}</span>
             </div>
             <div class="content-test">
