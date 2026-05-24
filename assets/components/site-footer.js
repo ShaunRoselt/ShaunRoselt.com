@@ -20,8 +20,8 @@ site-footer {
 }
 
 #footer {
-  background: var(--site-header-bg);
-  padding: 18px 0;
+    background: var(--site-header-bg);
+    padding: 20px 0;
   z-index: 997;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(2px);
