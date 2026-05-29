@@ -195,45 +195,6 @@
         ]
     },
     {
-        "id": "yt-BodpfZITESE",
-        "name": "Day 6 - Vibe Coding On Steam Deck",
-        "summary": "QR code generator, channel graphics and utilities.",
-        "ownership": "personal",
-        "series": "vibe-coding",
-        "tags": [
-            {
-                "icon": "bi-image",
-                "label": "Assets"
-            }
-        ],
-        "features": [
-            "Generator",
-            "Design"
-        ],
-        "media": {
-            "kind": "iframe",
-            "src": "https://www.youtube.com/embed/BodpfZITESE",
-            "title": "Day 6 - Vibe Coding On Steam Deck Until I Make $1,000,000",
-            "sandbox": "allow-scripts allow-same-origin",
-            "fallback": {
-                "kind": "image",
-                "src": "https://i.ytimg.com/vi/BodpfZITESE/hqdefault.jpg",
-                "alt": "Day 6 thumbnail"
-            }
-        },
-        "links": [
-            {
-                "href": "https://www.youtube.com/watch?v=BodpfZITESE",
-                "title": "Watch on YouTube",
-                "ariaLabel": "Watch on YouTube",
-                "icon": "bi-youtube",
-                "style": "primary",
-                "target": "_blank",
-                "rel": "noreferrer noopener"
-            }
-        ]
-    },
-    {
         "id": "yt-T5X-d7oYDj0",
         "name": "Day 7 - Vibe Coding On Steam Deck",
         "summary": "QR code improvements and Linux tooling.",
@@ -263,6 +224,45 @@
         "links": [
             {
                 "href": "https://www.youtube.com/watch?v=T5X-d7oYDj0",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-BodpfZITESE",
+        "name": "Day 6 - Vibe Coding On Steam Deck",
+        "summary": "QR code generator, channel graphics and utilities.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-image",
+                "label": "Assets"
+            }
+        ],
+        "features": [
+            "Generator",
+            "Design"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/BodpfZITESE",
+            "title": "Day 6 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/BodpfZITESE/hqdefault.jpg",
+                "alt": "Day 6 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=BodpfZITESE",
                 "title": "Watch on YouTube",
                 "ariaLabel": "Watch on YouTube",
                 "icon": "bi-youtube",
@@ -546,45 +546,6 @@
         ]
     },
     {
-        "id": "yt-b58VQe1qozM",
-        "name": "Day 15 - Vibe Coding On Steam Deck",
-        "summary": "Small utilities and site improvements.",
-        "ownership": "personal",
-        "series": "vibe-coding",
-        "tags": [
-            {
-                "icon": "bi-tools",
-                "label": "Utilities"
-            }
-        ],
-        "features": [
-            "Utilities",
-            "Improvements"
-        ],
-        "media": {
-            "kind": "iframe",
-            "src": "https://www.youtube.com/embed/b58VQe1qozM",
-            "title": "Day 15 - Vibe Coding On Steam Deck Until I Make $1,000,000",
-            "sandbox": "allow-scripts allow-same-origin",
-            "fallback": {
-                "kind": "image",
-                "src": "https://i.ytimg.com/vi/b58VQe1qozM/hqdefault.jpg",
-                "alt": "Day 15 thumbnail"
-            }
-        },
-        "links": [
-            {
-                "href": "https://www.youtube.com/watch?v=b58VQe1qozM",
-                "title": "Watch on YouTube",
-                "ariaLabel": "Watch on YouTube",
-                "icon": "bi-youtube",
-                "style": "primary",
-                "target": "_blank",
-                "rel": "noreferrer noopener"
-            }
-        ]
-    },
-    {
         "id": "yt-IRVxJtq2fK8",
         "name": "Day 16 - Vibe Coding On Steam Deck",
         "summary": "Work on larger features and experiments.",
@@ -614,6 +575,45 @@
         "links": [
             {
                 "href": "https://www.youtube.com/watch?v=IRVxJtq2fK8",
+                "title": "Watch on YouTube",
+                "ariaLabel": "Watch on YouTube",
+                "icon": "bi-youtube",
+                "style": "primary",
+                "target": "_blank",
+                "rel": "noreferrer noopener"
+            }
+        ]
+    },
+    {
+        "id": "yt-b58VQe1qozM",
+        "name": "Day 15 - Vibe Coding On Steam Deck",
+        "summary": "Small utilities and site improvements.",
+        "ownership": "personal",
+        "series": "vibe-coding",
+        "tags": [
+            {
+                "icon": "bi-tools",
+                "label": "Utilities"
+            }
+        ],
+        "features": [
+            "Utilities",
+            "Improvements"
+        ],
+        "media": {
+            "kind": "iframe",
+            "src": "https://www.youtube.com/embed/b58VQe1qozM",
+            "title": "Day 15 - Vibe Coding On Steam Deck Until I Make $1,000,000",
+            "sandbox": "allow-scripts allow-same-origin",
+            "fallback": {
+                "kind": "image",
+                "src": "https://i.ytimg.com/vi/b58VQe1qozM/hqdefault.jpg",
+                "alt": "Day 15 thumbnail"
+            }
+        },
+        "links": [
+            {
+                "href": "https://www.youtube.com/watch?v=b58VQe1qozM",
                 "title": "Watch on YouTube",
                 "ariaLabel": "Watch on YouTube",
                 "icon": "bi-youtube",
